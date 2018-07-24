@@ -1,6 +1,5 @@
 class NotesController < ApplicationController
-    # before_action :set_note, only: [:show, :edit, :update, :destroy]
-    # before_action :authenticate_user!, except: [:study]
+    before_action :authenticate_user!
     
     def new
     end
@@ -15,9 +14,6 @@ class NotesController < ApplicationController
         redirect_to "/notes"
     end
     
-    def study
-        @notes = Note.all
-    end
     
     def show
         @note = Note.find(params[:id])

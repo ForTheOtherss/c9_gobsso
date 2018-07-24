@@ -44,8 +44,13 @@
         <!-- 내비게이션 -->
         <nav class="gnb_nav">
           <ul>
-            <li><a href="#"><strong>로그인 / 회원가입</strong></a></li>
-            <li><a href="#"><strong>공지사항</strong></a></li>
+            <% if user_signed_in? %>
+              <li><a href="#">마이페이지</a></li>
+              <li><%= link_to '로그아웃', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to '회원가입', new_user_registration_path %></li>
+              <li><%= link_to '로그인', new_user_session_path %></li>
+            <% end %>
           </ul>
         </nav>
       </div>

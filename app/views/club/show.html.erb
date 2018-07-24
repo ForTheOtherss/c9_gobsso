@@ -1,0 +1,7 @@
+<h1><%= @club.id %> 번째 글 </h1>
+<h2>제목 : <%= @club.title %></h2>
+<p><%= @club.content %></p>
+
+<a href='/club'>뒤로 가기</a>
+<a href='/club/<%= @club.id %>' data-method='delete'> 삭제 </a>
+<a href='/club/<%= @club.id %>/edit'> 수정 </a>

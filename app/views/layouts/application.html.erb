@@ -44,7 +44,7 @@
       <div class="lnb_wrap mgn_layout_fixed">
         <nav class="lnb_nav">
           <ul>
-            <li><%= link_to '스터디',  study_path, :class => "bg_col_white" %></li>
+            <li><%= link_to '스터디',  notes_path, :class => "bg_col_white" %></li>
             <li><%= link_to '공모전',  competition_path, :class => "bg_col_white" %></li>
             <li><%= link_to '동아리',  club_path, :class => "bg-color1" %></li>
           </ul>
@@ -62,8 +62,13 @@
         <!-- GNB -->
         <nav class="gnb_nav">
           <ul>
-            <li><a href="#">My page</a></li>
-            <li><a href="#">Logout</a></li>
+          <% if user_signed_in? %>
+            <li><a href="#">마이페이지</a></li>
+            <li><%= link_to '로그아웃', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to '회원가입', new_user_registration_path %></li>
+            <li><%= link_to '로그인', new_user_session_path %></li>
+          <% end %>
           </ul>
         </nav>
       </div>
