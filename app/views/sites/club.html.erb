@@ -75,6 +75,10 @@
 
 
   <!-- 게시판 -->
+
+
+
+
   <div class="mgn_layout_fixed">
     <div class="btn2_wrap">
       <button class="btn2">조회수 <i class="fas fa-caret-down"></i></button>
@@ -89,57 +93,33 @@
           <th>조회수</th>
         </tr>
       </thead>
-
-      <tbody>
-            <tr>
-              <td class="text-left">
-                <img src="/assets/1.jpg" alt="a" class="img-board">
-                멋쟁이 사자처럼 운영진 모집
-                <span class="club_category club_category_1">
-                  공식 동아리
-                </span>
-                <span class="club_category club_category_2">
-                  동방
-                </span>
-              </td>
-              <td>
-                D-1
-              </td>
-              <td>
-                273
-              </td>
-            </tr>
-      </tbody>
-      <tbody>
-            <tr>
-              <td class="text-left">
-                <img src="/assets/1.jpg" alt="a" class="img-board">
-                멋쟁이 사자처럼 8기 모집
-              </td>
-              <td>
-                D-1
-              </td>
-              <td>
-                212
-              </td>
-            </tr>
-      </tbody>
-      <tbody>
-            <tr>
-              <td class="text-left">
-                <img src="/assets/1.jpg" alt="a" class="img-board">
-                PPT 동아리 모집
-              </td>
-              <td>
-                D-1
-              </td>
-              <td>
-                111
-              </td>
-            </tr>
-      </tbody>
+      
+      
+      <% @club.each do |club| %>
+        <tbody>
+              <tr>
+                <td class="text-left">
+                  <img src="/assets/1.jpg" alt="a" class="img-board">
+                  <a href='/club/<%= club.id %>'> <%= club.title %> </a> 
+                  <span class="club_category club_category_1">
+                    공식 동아리
+                  </span>
+                  <span class="club_category club_category_2">
+                    동방
+                  </span>
+                </td>
+                <td>
+                  D-1
+                </td>
+                <td>
+                  273
+                </td>
+              </tr>
+        </tbody>
+      <% end %>
 
     </table>
   </div>
 
-
+  <br>
+  <a href='/club/new'>새 글 작성</a>

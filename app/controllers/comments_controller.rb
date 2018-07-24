@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
     def create
         comment = Comment.new
         comment.content = params[:input_content]
-        comment.note_id = params[:c.]
+        comment.note_id = params[:note_id]
         comment.save
         
         redirect_to "/notes/#{comment.note.id}"

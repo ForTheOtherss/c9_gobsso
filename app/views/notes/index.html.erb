@@ -1,7 +1,0 @@
-<h1>모든 노트들 목록입니다.</h1>
-
-
-<% @notes.each do |note| %>
-    <a href='/notes/<%= note.id %>'> <%= note.title %> </a>
-    <br>
-<% end %>

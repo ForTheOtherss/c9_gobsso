@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/notes' => 'notes#create' 
   
   # Read 
-  get '/notes' => 'notes#study'  
+  get '/notes' => 'sites#study'  
   get '/notes/:id' => 'notes#show'  
 
   # Update
@@ -25,15 +25,30 @@ Rails.application.routes.draw do
   delete '/comments/:id' => 'comments#destroy'
   
   
-  #### 
-  get '/study' => 'notes#study'
+
   
-  
-  
+
   #### site
-  get '/club' => 'sites#club'
   get '/club_content' => 'sites#club_content'
   get '/competition' => 'sites#competition'
+  
+  
+  #### club
+  # Create
+  get '/club/new' => 'club#new'
+  post '/club' => 'club#create' 
+    
+  # Read 
+  get '/club' => 'sites#club'
+  get '/club/:id' => 'club#show'  
+  
+  # Update
+  get '/club/:id/edit' => 'club#edit' 
+  patch '/club/:id' => 'club#update' 
+    
+  # Destroy
+  delete '/club/:id' => 'club#destroy' 
+  
   
   ### 메인 페이지
   root to: 'sites#index'
