@@ -12,11 +12,11 @@ class SitesController < ApplicationController
     end
     
     def study
-        @notes = Note.all
+        @notes = Note.where(mainCategory: 'study')
     end
     
     def club
-        @club = Club.all
+        @club = Note.where(mainCategory: 'club')
     end
     
 end

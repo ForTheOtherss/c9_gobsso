@@ -1,0 +1,24 @@
+<h1><%= @note.id %> 번째 글 </h1>
+<h2>제목 : <%= @note.title %></h2>
+<p><%= @note.content %></p>
+
+<a href='/study'>뒤로 가기</a>
+<a href='/study/<%= @note.id %>' data-method='delete'> 삭제 </a>
+<a href='/study/<%= @note.id %>/edit'> 수정 </a>
+
+<hr />
+<form action = '/comments' method='post'>
+    <input type='hidden' name='authenticity_token' value=<%= form_authenticity_token %>></input>
+    <input type='hidden' name='note_id' value=<%= @note.id %>></input>
+    <strong>Comment: </strong>
+    <input type='text' name='input_content'></input>
+    <input type='submit'></input>
+</form>
+
+<% @note.comments.each do |comment| %>
+    <p>
+        <%= comment.content %>
+        <a href='/comments/<%= comment.id %>'
+        data-confirm='댓글을 삭제합니다.' data-method='delete'>--삭제--</a>
+    </p>
+<% end %>
