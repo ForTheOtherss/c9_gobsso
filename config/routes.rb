@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
+  #### study 
   # Create
-  get '/notes/new' => 'notes#new' 
-  post '/notes' => 'notes#create' 
+  get '/study/new' => 'notes#new_study' 
+  post '/study' => 'notes#create' 
   
   # Read 
-  get '/notes' => 'sites#study'  
-  get '/notes/:id' => 'notes#show'  
+  get '/study' => 'sites#study'
+  get '/study/:id' => 'notes#show_study'  
 
   # Update
-  get '/notes/:id/edit' => 'notes#edit'  
-  patch '/notes/:id' => 'notes#update' 
+  get '/study/:id/edit' => 'notes#edit_study'  
+  patch '/study/:id' => 'notes#update' 
     
   # Destroy
-  delete '/notes/:id' => 'notes#destroy'
+  delete '/study/:id' => 'notes#destroy'
   
   
   
@@ -26,7 +27,6 @@ Rails.application.routes.draw do
   
   
 
-  
 
   #### site
   get '/club_content' => 'sites#club_content'
@@ -35,24 +35,23 @@ Rails.application.routes.draw do
   
   #### club
   # Create
-  get '/club/new' => 'club#new'
-  post '/club' => 'club#create' 
+  get '/club/new' => 'notes#new_club'
+  post '/club' => 'notes#create' 
     
   # Read 
   get '/club' => 'sites#club'
-  get '/club/:id' => 'club#show'  
+  get '/club/:id' => 'notes#show_study'  
   
   # Update
-  get '/club/:id/edit' => 'club#edit' 
-  patch '/club/:id' => 'club#update' 
+  get '/club/:id/edit' => 'notes#edit_club' 
+  patch '/club/:id' => 'notes#update' 
     
   # Destroy
-  delete '/club/:id' => 'club#destroy' 
+  delete '/club/:id' => 'notes#destroy' 
   
   
   ### 메인 페이지
   root to: 'sites#index'
-  
 end
 
 

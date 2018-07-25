@@ -1,0 +1,8 @@
+<h1>새 글을 등록해 보아요! - 스터디</h1>
+<form action='/study' method='post'> 
+    <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
+    <input name='input_title' type='text'></input>
+    <input name='input_content' type='text'></input>
+    <input name='input_mainCategory' type='hidden' value='study'></input>
+    <input type='submit'></input>
+</form>
