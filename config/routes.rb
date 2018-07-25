@@ -16,23 +16,6 @@ Rails.application.routes.draw do
   # Destroy
   delete '/study/:id' => 'notes#destroy'
   
-  
-  
-  #### Comment
-  # Create
-  post '/comments' => 'comments#create'
-  
-  # Destroy
-  delete '/comments/:id' => 'comments#destroy'
-  
-  
-
-
-  #### site
-  get '/club_content' => 'sites#club_content'
-  get '/competition' => 'sites#competition'
-  
-  
   #### club
   # Create
   get '/club/new' => 'notes#new_club'
@@ -48,6 +31,22 @@ Rails.application.routes.draw do
     
   # Destroy
   delete '/club/:id' => 'notes#destroy' 
+  
+
+
+  #### site
+  get '/club_content' => 'sites#club_content'
+  get '/competition' => 'sites#competition'
+  
+  #### Comment
+  # Create
+  post '/comments' => 'comments#create'
+  
+  # Destroy
+  delete '/comments/:id' => 'comments#destroy'
+  
+  
+
   
   
   ### 메인 페이지

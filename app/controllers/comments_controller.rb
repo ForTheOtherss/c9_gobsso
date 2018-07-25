@@ -5,13 +5,13 @@ class CommentsController < ApplicationController
         comment.note_id = params[:note_id]
         comment.save
         
-        redirect_to "/notes/#{comment.note.id}"
+        redirect_to "/#{comment.note.mainCategory}/#{comment.note.id}"
     end
     
     def destroy
         comment = Comment.find params[:id]
         comment.destroy
         
-        redirect_to "/notes/#{comment.note.id}"
+        redirect_to "/#{comment.note.mainCategory}/#{comment.note.id}"
     end
 end
