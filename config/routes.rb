@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     
   # Read 
   get '/club' => 'sites#club'
-  get '/club/:id' => 'notes#show_study'  
+  get '/club/:id' => 'notes#show_club'  
   
   # Update
   get '/club/:id/edit' => 'notes#edit_club' 
