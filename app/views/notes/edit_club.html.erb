@@ -1,10 +1,92 @@
-<h1>기존 글을 수정해 보아요!</h1>
 
+  <!-- Container -->
+  <div>검색창(Gem 이용)</div>
+  <br><br>
+  <div class="club_menu">
+    <ul>
+      <li><a href="#" class="club_menu_click">전체</a></li>
+      <li><a href="#">문화/예술/공연</a></li>
+      <li><a href="#">봉사/사회활동</a></li>
+      <li><a href="#">학술/교양</a></li>
+      <li><a href="#">기타</a></li>
+    </ul>
+  </div>
+  <div>
+    <hr class="club_hr border-color2">
+  </div>
+
+
+  <div class="club_content1 mgn_layout_fixed">
+    <!-- 포스터  -->
+    <div class="club_poster border-color1">
+      <img src="/assets/1.jpg" alt="a" class="img_poster">
+    </div>
+
+    <!-- 동아리 -->
 <form action='/club/<%= @note.id %>' method='post'>
-    <input type="hidden" name="_method" value="patch">  
+  <input type="hidden" name="_method" value="patch"> 
+  <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
+  
+    <div class="club_poster_info border-color1">
+      <h1>
+        <input name='input_title' type='text' value=<%= @note.title %>></input>
+        <span class="club_dday_label bg-color2">D-20</span>
+        <span class="club_label_wrap1">
+          <span class="sharing_label">
+            <a href="#">
+              <i class="fas fa-share-alt"></i> 공유
+            </a>
+          </span>
 
-    <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
-    <input name='input_title' type='text' value=<%= @note.title %>></input>
-    <input name='input_content' type='text' value=<%= @note.content %>></input>
-    <input type='submit'></input>
+          <span class="heart_label">
+            <a href="#">
+              <i class="far fa-heart"></i> 123
+            </a>
+          </span>
+
+        </span>
+
+
+      </h1>
+      <hr>
+      <div class="info_content_wrap">
+        <div class="info_content1">
+          <h2>지원 자격</h2>
+          <p>
+            학년: 1,2,3 학년<br>
+            학과: 상관없음
+          </p>
+        </div>
+        <div class="info_content2">
+          <h2>모집 기간</h2>
+          <p>
+            서류: 18.07.11~18.07.15<br>
+            면접: 18.07.17~18.07.19<br>
+            발표: 18.07.22
+          </p>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+<!-- 동아리 상세정보 -->
+  <div class="poster_details_wrap border-color1 mgn_layout_fixed">
+    <div class="poster_menu">
+      <ul>
+        <li><a href="#" class="border_bottom_white">상세정보</a></li>
+        <li><a href="#">활동사진</a></li>
+        <li><a href="#">Q&A</a></li>
+      </ul>
+    </div>
+    <div class="poster_details">
+      <h1>상세 정보</h1>
+      <p><input name='input_content' type='text' value=<%= @note.content %>></input></p>
+    </div>
+  </div>
+  
+  <br>
+  <div class="mgn_layout_fixed">
+    <input type='submit' value="수정 완료"></input>
+  </div>
 </form>

@@ -711,12 +711,16 @@ clear: both;
 
 .poster_submit {
   color: white;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  margin-left: 15px;
+}
+
+.poster_submit_position {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 /* 포스터 상세 정보 */
@@ -790,6 +794,9 @@ clear: both;
   padding: 8px;
   color: white;
   border-radius: 5px;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
 }
 
 .comment_content {
@@ -805,7 +812,7 @@ clear: both;
   margin: 0;
 }
 
-.comment_content h2 {
+.comment_content_date {
   font-size: 13px;
   font-weight: normal;
   color: gray;
@@ -821,16 +828,12 @@ clear: both;
   margin-right: 10px;
 }
 
-.inner_comment {
-  margin-top: 10px;
-}
 
 .inner_comment_wrap {
   padding: 7px;
   border-radius: 25px;
   position: relative;
   margin-right: 25%;
-  margin-left: 5%;
 }
 
 .inner_comment_content {

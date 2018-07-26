@@ -3,11 +3,6 @@ class SitesController < ApplicationController
         render layout: 'index_layout'
     end
     
-    
-    
-    def club_content
-    end
-    
     def competition
     end
     
