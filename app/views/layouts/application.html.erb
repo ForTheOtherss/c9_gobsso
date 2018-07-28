@@ -36,9 +36,9 @@
       <div class="lnb_wrap l-fixed">
         <nav class="lnb_nav">
           <ul>
-            <li><%= link_to '스터디',  study_path, :class => "bg_col_white black3" %></li>
-            <li><%= link_to '공모전',  competition_path, :class => "bg_col_white black3" %></li>
-            <li><%= link_to '동아리',  club_path, :class => "bg-color1 black3" %></li>
+            <li><a href="<%= study_path %>" class="<%= @study ? @study : 'bg_col_white black3' %>">스터디</a></li>
+            <li><a href="<%= competition_path %>" class="<%= @comp ? @comp : 'bg_col_white black3' %>">공모전</a></li>
+            <li><a href="<%= club_path %>" class="<%= @club ? @club : 'bg_col_white black3' %>">동아리</a></li>
           </ul>
         </nav>
       </div>
