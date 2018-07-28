@@ -5,6 +5,7 @@
   
   <!--bxslider-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--밑의 코드가 위 코드랑 불러오는 방식만 다르지 똑같음. 단, 버전이 다름.-->
   <!--<script src="/assets/jquery-3.3.1.min.js"></script>-->
   <%= yield :bxslider_js %>
   
@@ -14,7 +15,7 @@
   <%= csrf_meta_tags %>
   
   <link rel="stylesheet" href="/assets/theme.css">
-  <link href="https://fonts.googleapis.com/css?family=Gothic+A1:100,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gothic+A1: 200,300,400,500,600,700,800,900" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 
@@ -28,26 +29,21 @@
 
   <!-- Header + Main Banner -->
   <header id="header">
-    <!-- 맨 위 선  -->
-    <!--<div class="header_line_wrap">-->
-    <!--  <hr class="mgn_layout_full header_line header_line_white">-->
-    <!--</div>-->
-
     <!-- LNB & 로고 & GNB -->
-    <div class="bg-color1 mgn_layout_full">
+    <div class="bg-color1 l-full">
 
       <!-- LNB -->
-      <div class="lnb_wrap mgn_layout_fixed">
+      <div class="lnb_wrap l-fixed">
         <nav class="lnb_nav">
           <ul>
-            <li><%= link_to '스터디',  study_path, :class => "bg_col_white" %></li>
-            <li><%= link_to '공모전',  competition_path, :class => "bg_col_white" %></li>
-            <li><%= link_to '동아리',  club_path, :class => "bg-color1" %></li>
+            <li><%= link_to '스터디',  study_path, :class => "bg_col_white black3" %></li>
+            <li><%= link_to '공모전',  competition_path, :class => "bg_col_white black3" %></li>
+            <li><%= link_to '동아리',  club_path, :class => "bg-color1 black3" %></li>
           </ul>
         </nav>
       </div>
 
-      <div class="gnb_wrap mgn_layout_fixed mgn-pd_0">
+      <div class="gnb_wrap l-fixed mgn-pd_0">
         <!-- 로고 -->
         <div class="logo">
           <h1>
@@ -62,8 +58,8 @@
             <li><a href="#">마이페이지</a></li>
             <li><%= link_to '로그아웃', destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><%= link_to '회원가입', new_user_registration_path %></li>
-            <li><%= link_to '로그인', new_user_session_path %></li>
+            <li><%= link_to '공지사항', new_user_registration_path %></li>
+            <li><%= link_to '로그인 / 회원가입', new_user_session_path %></li>
           <% end %>
           </ul>
         </nav>
@@ -77,8 +73,8 @@
 
 <br><br>
 <!-- Footer -->
-  <footer id="footer" class="bg-color1">
-      <p class="mgn_layout_fixed">
+  <footer id="footer" class="bg-color2">
+      <p class="l-fixed black3">
         고객행복센터 1670-6250 오전 9시 - 새벽 3시, 점심시간: 오후 12시 - 오후 1시<br>
         (주) 위드이노베이션<br><br>
         주소 : 서울특별시 강남구 봉은사로 479, 479타워 11층<br>
