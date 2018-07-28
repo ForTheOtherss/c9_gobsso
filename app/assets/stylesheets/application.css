@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
-
-@charset "UTF-8";
 body {
   margin: 0;
   font-family: 'Gothic A1', sans-serif;
@@ -28,15 +25,27 @@ body {
 
 
 /* 고정 본문 영역 layout 설정*/
-.mgn_layout_fixed {
-  width: 800px;
+.l-fixed {
+  width: 1024px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.mgn_layout_full {
+.l-full {
   width: 100%;
   margin: 0;
+}
+
+
+/* div들 가로로 정렬 */
+.s-horizon {
+  float: left;
+}
+
+.s-horizon_wrap {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 /* 맨 윗줄 */
@@ -118,13 +127,17 @@ clear: both;
   list-style: none;
 }
 
+.gnb_nav li {
+  float: left;
+  width: auto;
+}
+
 .gnb_nav li a {
   display: block;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
   margin-top: 12px;
-  color: #000000;
-  font-size: 14px;
+  color: white;
+  font-size: 15px;
   text-decoration: none;
 }
 
@@ -138,10 +151,7 @@ clear: both;
   clear: both;
 }
 
-.gnb_nav li {
-  float: left;
-  width: auto;
-}
+
 
 /* lnb_nav 메뉴 */
 .lnb_nav:after {
@@ -188,27 +198,15 @@ clear: both;
 }
 
 /* 주 메뉴 3개 */
-.bg_container_col {
-  background: linear-gradient(
-    to bottom,
-    white 0%,
-    white 60%,
-    rgba(231, 231, 231) 60%,
-    rgba(231, 231, 231) 100%
-    );
+#container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.main-banner {
-  background-image: url('img/main-banner.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 92px;
-
-}
 
 .container_nav_wrap {
-  padding-top: 25%;
+  margin-top: 50px;
 }
 
 .container_nav_wrap:after {
@@ -217,37 +215,25 @@ clear: both;
   clear: both;
 }
 
-
 .container_nav {
   float: left;
-  width: 31%;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.43);
-  padding: 1%;
+  width: 27%;
+  padding: 2% 2% 1% 2%;
+  border: 2px solid;
 }
 
 .container_nav_v1, .container_nav_v2 {
-  margin-right: 0.5%;
+  margin-right: 20px;
 }
+
 
 
 .container_nav i {
-  font-size: 320%;
-  color: white;
-  margin-left: 10px;
-  margin-right: 10px;
+  font-size: 400%;
+  color: coral;
 }
 
-.menu-icon {
-  float: left;
-  margin-right: 30px;
-  margin-left: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.menu-text {
-  float: left;
+.menu-text-wrap {
   margin-top: 10px;
 }
 
@@ -260,17 +246,19 @@ clear: both;
 .main-text {
   font-size: 30px;
   font-weight: 900;
-  margin: 0;
-  color: white;
+  margin: 20px 0 0 0;
 }
 
 .sub-text {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 100;
-  margin: 0;
-  color: white;
+  margin: 5px 0 0 2px;
 }
 
+.sub-text2 {
+  margin: 20px 0 0 0;
+  font-size: 15px;
+}
 
 
 

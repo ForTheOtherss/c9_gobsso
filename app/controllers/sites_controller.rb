@@ -1,6 +1,5 @@
 class SitesController < ApplicationController
     def index
-        render layout: 'index_layout'
     end
     
     def competition
@@ -13,5 +12,4 @@ class SitesController < ApplicationController
     def club
         @club = Note.where(mainCategory: 'club')
     end
-    
 end
