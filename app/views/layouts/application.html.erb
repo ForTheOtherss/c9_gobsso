@@ -14,10 +14,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   
-  <link rel="stylesheet" href="/assets/theme.css">
+
   <link href="https://fonts.googleapis.com/css?family=Gothic+A1: 200,300,400,500,600,700,800,900" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="/assets/theme.css">
 
   <!-- 제이쿼리 -->
   <script src="/assets/script.js"></script>
@@ -28,17 +28,17 @@
 <body>
 
   <!-- Header + Main Banner -->
-  <header id="header">
+  <header id="header" class="bg-color1">
     <!-- LNB & 로고 & GNB -->
-    <div class="bg-color1 l-full">
+    <div class="l-full">
 
       <!-- LNB -->
       <div class="lnb_wrap l-fixed">
         <nav class="lnb_nav">
           <ul>
-            <li><%= link_to '스터디',  study_path, :class => "bg_col_white black3" %></li>
-            <li><%= link_to '공모전',  competition_path, :class => "bg_col_white black3" %></li>
-            <li><%= link_to '동아리',  club_path, :class => "bg-color1 black3" %></li>
+            <li><a href="<%= study_path %>" class="<%= @study ? @study : 'bg_col_white black3' %>">스터디</a></li>
+            <li><a href="<%= competition_path %>" class="<%= @comp ? @comp : 'bg_col_white black3' %>">공모전</a></li>
+            <li><a href="<%= club_path %>" class="<%= @club ? @club : 'bg_col_white black3' %>">동아리</a></li>
           </ul>
         </nav>
       </div>

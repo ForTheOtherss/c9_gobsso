@@ -35,6 +35,35 @@ body {
   width: 100%;
   margin: 0;
 }
+#header {
+  height: 70px;
+}
+
+#index-container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#club-container {
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+#club-content {
+  width: 580px;
+  margin: 0 10px;s
+}
+
+#club-sidebar-left {
+  width: 240px;
+}
+
+#club-sidebar-right {
+  width: 180px;
+}
 
 
 /* div들 가로로 정렬 */
@@ -42,43 +71,24 @@ body {
   float: left;
 }
 
-.s-horizon_wrap {
+.s-horizon_wrap:after {
   content: "";
   display: block;
   clear: both;
 }
 
 /* 맨 윗줄 */
-.header_line {
-  margin: 0;
-  border: 3px solid;
-}
-
-.header_line2 {
-  border-color: red;
-}
-
-
-.header_line_white {
-  border-color: white;
-}
 
 
 .header_box p {
-float: right;
-margin-top: 0;
-padding-left: 10px;
-padding-right: 10px;
-padding-top: 2px;
-padding-bottom: 2px;
-font-size: 12px;
-color: white;
-}
-
-.header_line_wrap:after {
-content:"";
-display: block;
-clear: both;
+  float: right;
+  margin-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 12px;
+  color: white;
 }
 
 
@@ -117,6 +127,7 @@ clear: both;
 
   /* gnb_nav 메뉴 */
 .gnb_nav {
+  padding-top: 2px;
   float: right;
   width: auto;
 }
@@ -154,6 +165,9 @@ clear: both;
 
 
 /* lnb_nav 메뉴 */
+.lnb_wrap {
+}
+
 .lnb_nav:after {
   content:"";
   display: block;
@@ -171,7 +185,6 @@ clear: both;
   padding-left: 7px;
   padding-right: 7px;
   margin-top: 0;
-  color: #000000;
   font-size: 14px;
   text-decoration: none;
   border: 1px solid white;
@@ -198,13 +211,6 @@ clear: both;
 }
 
 /* 주 메뉴 3개 */
-#container {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
 .container_nav_wrap {
   margin-top: 50px;
 }
@@ -336,15 +342,7 @@ clear: both;
 
 /* 동아리 광고판(배너 슬라이드) */
 
-.club_ad {
-  float: left;
-  width: 425px;
-  /* border: 4px solid rgba(231, 231, 231); */
-  margin-right: 18px;
-  margin-top: 18px;
-  padding: 0;
-  /* height: 280px; */
-}
+
 
 .ad-wrap {
   content: "";
@@ -354,21 +352,12 @@ clear: both;
 }
 
 .ad-component-1 {
-  float: left;
-  width: 45%;
-  /* height: 300px; */
+  width: 94%;
   margin-left: 3%;
-  margin-right: 2%;
-  height: 230px;
+  margin-right: 3%;
+  height: 240px;
 }
 
-.ad-component-2 {
-  float: left;
-  width: 45%;
-  margin-left: 2%;
-  margin-right: 3%;
-  height: 230px;
-}
 
 /* 동아리 랭킹창 */
 
@@ -405,7 +394,7 @@ clear: both;
 }
 
 .club_ranking p {
-  border-bottom: 4px solid rgba(231, 231, 231);
+  border-bottom: 4px solid rgb(231, 231, 231);
   margin-bottom: 23px;
 }
 
@@ -420,7 +409,6 @@ clear: both;
   font-size: 25px;
   font-weight: bold;
   color: yellow;
-  padding-right: 10px;
 }
 
 .col3 {
@@ -448,8 +436,8 @@ clear: both;
 
 .img-board {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
 }
 
 .club_content1:after {
@@ -463,6 +451,7 @@ clear: both;
   padding: 4px;
   font-size: 12px;
   margin: 2px;
+  font-weight: 200;
 }
 
 .club_category_1 {
@@ -470,7 +459,11 @@ clear: both;
 }
 
 .club_category_2 {
-  background-color: orange;
+  background-color: #6699ff;
+}
+
+.club_category_3 {
+  background-color: #ff6666;
 }
 
 
@@ -478,9 +471,11 @@ clear: both;
 .btn2_wrap {
   display: block;
   text-align: right;
-  margin-right: 5px;
+  margin-top: 5px;
   margin-bottom: 5px;
+  float: right;
 }
+
 
 .float_right {
   float: right;
@@ -491,28 +486,33 @@ clear: both;
   padding: 1px;
   font-size: 10px;
   cursor: pointer;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 0.5px 8px;
+  font-size: 12px;
+  font-weight: 400;
 }
-
+.club-table-line {
+  border: 1px solid rgb(231, 231, 231);
+}
 .club_board {
     width: 100%;
-    border: 3px solid;
+    border: 1.5px solid;
     border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.club_board tbody:nth-child(2n){
-  background-color: rgba(231, 231, 231);
-}
-
-.club_board th, td {
-    padding: 12px;
-    text-align: center;
-    height: 10px;
+.club_board tbody:nth-child(2n-1){
+  background-color: rgb(231, 231, 231);
 }
 
 .club_board th {
-    padding: 15px;
+  padding: 5px 8px 5px 15px;
+  height: 6px;
+}
+
+.club_board td {
+    padding: 12px;
+    height: 10px;
 }
 
 .club_board img {
@@ -521,23 +521,46 @@ clear: both;
   padding-left: 5px;
 }
 
-.text-left {
-    text-align: left;
+
+.club-title-text {
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
-.text-center {
-  text-align: center;
+.club-subtitle-text {
+  font-size: 12px;
+  margin: 0;
+}
+
+.club-main-title {
+  float: left;
+  margin-top: 5px;
 }
 
 .club_board .col-1 {
-    width: 80%;
+    width: 100%;
     text-align: left;
 }
 
-.club_board .col-2 {
-    width: 10%;
+
+.club-etc-text p {
+  margin: 0;
+  font-size: 12px;
+  text-align: right;
+  font-weight: 600;
+  margin-bottom: 1.5px;
+  width: 100px;
+  float: right;
 }
 
+.fa-thumbs-up {
+  color: #6699ff;
+}
+
+.fa-thumbs-down {
+  color: #ff6666;
+}
 
 /* 스터디  */
 .study_btn_wrap {
@@ -717,7 +740,7 @@ clear: both;
 }
 
 .poster_menu {
-  border-bottom: 1px solid rgba(171, 212, 151);
+  border-bottom: 1px solid rgb(171, 212, 151);
 }
 
 .poster_menu ul {
@@ -743,7 +766,7 @@ clear: both;
 .poster_menu li {
   float:left;
   width: auto;
-  border-right: 1px solid rgba(171, 212, 151);
+  border-right: 1px solid rgb(171, 212, 151);
   width: 80px;
   text-align: center;
 }
@@ -853,7 +876,7 @@ clear: both;
 .recommend_competition {
   float: left;
   width: 418px;
-  border: 4px solid rgba(231, 231, 231);
+  border: 4px solid rgb(231, 231, 231);
   /* margin-right: 18px; */
   margin-top: 18px;
   padding: 10px;
@@ -868,7 +891,7 @@ clear: both;
 }
 
 .competition_img1 {
-  border: 1px solid rgba(231, 231, 231);
+  border: 1px solid rgb(231, 231, 231);
   float: left;
   width: 125px;
   height: 175px;
@@ -888,7 +911,7 @@ clear: both;
 }
 
 .competition_content hr {
-  border: 1px solid rgba(231, 231, 231);
+  border: 1px solid rgb(231, 231, 231);
 }
 
 .competition_content h2 {
@@ -929,7 +952,7 @@ clear: both;
 
 
 .comp_box_outer {
-  border: 4px solid rgba(231, 231, 231);
+  border: 4px solid rgb(231, 231, 231);
   border-radius: 3px;
   float: left;
   width: 170px;
@@ -955,7 +978,7 @@ clear: both;
   max-width: 100%;
   max-height: 100%;
   padding: 5px;
-  border: 1px solid rgba(231, 231, 231);
+  border: 1px solid rgb(231, 231, 231);
 }
 
 .comp_box_outer h2 {
@@ -983,10 +1006,61 @@ clear: both;
 }
 
 .comp_board_watching {
-  color: rgba(200, 200, 200);
+  color: rgb(200, 200, 200);
   font-weight: bold;
 }
 
 .comp_content_img {
   height: 100%;
 }
+
+.test {
+  color: red;
+}
+
+.test2 {
+  color: blue;
+}
+
+
+/* sidebar-left */
+.favorite-main-text {
+  margin-bottom: 10px;
+}
+.favorite-main {
+  font-size: 18px;
+  font-weight: 700;
+}
+.favorite-content {
+  border: 1.5px solid;
+  width: 240px;
+  height: 70px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: -1.5px;
+}
+
+.favorite-img {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  margin-top: -1px;
+}
+
+.favorite-text {
+  margin-top: 1px;
+}
+
+.favorite-text h1 {
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+.favorite-text p {
+  font-size: 10px;
+  margin: 0;
+  margin-bottom: 2px;
+}
+

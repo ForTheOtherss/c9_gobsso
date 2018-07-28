@@ -1,5 +1,24 @@
 class NotesController < ApplicationController
     before_action :authenticate_user!
+    before_action :lnb_class1, only: [:edit_study, :new_study, :show_study]
+    before_action :lnb_class2, only: [:edit_comp, :new_comp, :show_comp]
+    before_action :lnb_class3, only: [:edit_club, :new_club, :show_club]
+    
+    
+    def lnb_class1
+        @study = 'bg-color1 black3'
+    end
+    
+    def lnb_class2
+        @comp = 'bg-color1 black3'
+    end
+    
+    def lnb_class3
+        @club = 'bg-color1 black3'
+    end
+        
+    
+    
     
     def new_study
     end
