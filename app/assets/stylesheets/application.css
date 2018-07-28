@@ -35,6 +35,9 @@ body {
   width: 100%;
   margin: 0;
 }
+#header {
+  height: 70px;
+}
 
 #index-container {
   width: 800px;
@@ -46,18 +49,16 @@ body {
   width: 1024px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
 }
 
 #club-content {
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 580px;
+  margin: 0 10px;s
 }
 
 #club-sidebar-left {
-  width: 200px;
-  height: 200px;
-  border: 2px solid red;
+  width: 240px;
 }
 
 #club-sidebar-right {
@@ -77,36 +78,17 @@ body {
 }
 
 /* 맨 윗줄 */
-.header_line {
-  margin: 0;
-  border: 3px solid;
-}
-
-.header_line2 {
-  border-color: red;
-}
-
-
-.header_line_white {
-  border-color: white;
-}
 
 
 .header_box p {
-float: right;
-margin-top: 0;
-padding-left: 10px;
-padding-right: 10px;
-padding-top: 2px;
-padding-bottom: 2px;
-font-size: 12px;
-color: white;
-}
-
-.header_line_wrap:after {
-content:"";
-display: block;
-clear: both;
+  float: right;
+  margin-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 12px;
+  color: white;
 }
 
 
@@ -145,6 +127,7 @@ clear: both;
 
   /* gnb_nav 메뉴 */
 .gnb_nav {
+  padding-top: 2px;
   float: right;
   width: auto;
 }
@@ -182,6 +165,9 @@ clear: both;
 
 
 /* lnb_nav 메뉴 */
+.lnb_wrap {
+}
+
 .lnb_nav:after {
   content:"";
   display: block;
@@ -369,7 +355,7 @@ clear: both;
   width: 94%;
   margin-left: 3%;
   margin-right: 3%;
-  height: 280px;
+  height: 240px;
 }
 
 
@@ -423,7 +409,6 @@ clear: both;
   font-size: 25px;
   font-weight: bold;
   color: yellow;
-  padding-right: 10px;
 }
 
 .col3 {
@@ -451,8 +436,8 @@ clear: both;
 
 .img-board {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
 }
 
 .club_content1:after {
@@ -486,9 +471,11 @@ clear: both;
 .btn2_wrap {
   display: block;
   text-align: right;
-  margin-right: 5px;
+  margin-top: 5px;
   margin-bottom: 5px;
+  float: right;
 }
+
 
 .float_right {
   float: right;
@@ -499,25 +486,33 @@ clear: both;
   padding: 1px;
   font-size: 10px;
   cursor: pointer;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 0.5px 8px;
+  font-size: 12px;
+  font-weight: 400;
 }
-
+.club-table-line {
+  border: 1px solid rgb(231, 231, 231);
+}
 .club_board {
     width: 100%;
     border: 1.5px solid;
     border-collapse: collapse;
 }
 
-.club_board tbody:nth-child(2n){
+.club_board tbody:nth-child(2n-1){
   background-color: rgb(231, 231, 231);
 }
 
-.club_board th, td {
-    padding: 12px;
-    height: 10px;
+.club_board th {
+  padding: 5px 8px 5px 15px;
+  height: 6px;
 }
 
-.club_board th {
-    padding: 15px;
+.club_board td {
+    padding: 12px;
+    height: 10px;
 }
 
 .club_board img {
@@ -538,21 +533,25 @@ clear: both;
   margin: 0;
 }
 
+.club-main-title {
+  float: left;
+  margin-top: 5px;
+}
 
 .club_board .col-1 {
-    width: 70%;
+    width: 100%;
     text-align: left;
 }
 
-.club_board .col-2 {
-    width: 30%;
-}
 
 .club-etc-text p {
   margin: 0;
   font-size: 12px;
   text-align: right;
   font-weight: 600;
+  margin-bottom: 1.5px;
+  width: 100px;
+  float: right;
 }
 
 .fa-thumbs-up {
@@ -1024,5 +1023,44 @@ clear: both;
 }
 
 
+/* sidebar-left */
+.favorite-main-text {
+  margin-bottom: 10px;
+}
+.favorite-main {
+  font-size: 18px;
+  font-weight: 700;
+}
+.favorite-content {
+  border: 1.5px solid;
+  width: 240px;
+  height: 70px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: -1.5px;
+}
 
+.favorite-img {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  margin-top: -1px;
+}
+
+.favorite-text {
+  margin-top: 1px;
+}
+
+.favorite-text h1 {
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+.favorite-text p {
+  font-size: 10px;
+  margin: 0;
+  margin-bottom: 2px;
+}
 

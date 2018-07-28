@@ -25,20 +25,18 @@
   <div id="club-container" class="s-horizon_wrap">
     <%= render 'application/sidebar_left' %>
 
+    <!-- 게시판 -->
     <div id="club-content" class="s-horizon">
-      <!-- club-content -->
-      <div class="club_content1">
-        <!-- 게시판 -->
           <table class="club_board border-color2">
             <thead>
-              <tr>
-                <th class="col-1">
-                  모집중인 동아리
-                </th>
-                <th class="col-2">
+              <tr class="club-table-line">
+                <th class="col-1 black2">
+                  <div class="club-main-title">
+                    모집중인 동아리
+                  </div>
                   <div class="btn2_wrap">
-                    <button class="btn2">조회수 <i class="fas fa-caret-down"></i></button>
-                    <button class="btn2">신입생 <i class="fas fa-caret-down"></i></button>
+                    <button class="btn2 border-color2">조회수 <i class="fas fa-caret-down"></i></button>
+                    <button class="btn2 border-color2">신입생 <i class="fas fa-caret-down"></i></button>
                   </div>
                 </th>
               </tr>
@@ -47,7 +45,7 @@
 
             <% @club.reverse_each do |club| %>
               <tbody>
-                <tr>
+                <tr class="club-table-line">
                   <td>
                     <img src="/assets/1.jpg" alt="a" class="img-board s-horizon">
                     <a href='/club/<%= club.id %>'>
@@ -61,21 +59,22 @@
                         <p class="club-subtitle-text black3">멋쟁이 사자처럼은 비전공자도 코딩을 할 수 있는 동아리입니다.</p>
                       </div>
                     </a>
+                    <div class="club-etc-text">
+                        <p class="color1">D-1</p>
+                        <p><i class="far fa-eye black3"></i> 273</p>
+                        <p><i class="fas fa-thumbs-up"></i> 15 <i class="fas fa-thumbs-down"></i> 2</p>
+                    </div>
+                  </td>
 
-                  </td>
-                  <td class="club-etc-text">
-                    <p class="club-date color1">D-1</p>
-                    <p class="club-views"><i class="far fa-eye black3"></i> 273</p>
-                    <p class="club-eval"><i class="fas fa-thumbs-up"></i> 15 <i class="fas fa-thumbs-down"></i> 2</p>
-                  </td>
                 </tr>
               </tbody>
               <% end %>
           </table>
-
+          
+          
+          
         <br>
         <a href='/club/new'>새 글 작성</a>
-      </div>
     </div>
     
     <%= render 'application/sidebar_right' %>
