@@ -43,7 +43,7 @@
             </thead>
 
 
-            <% @club.reverse_each do |club| %>
+            <% @club.each do |club| %>
               <tbody>
                 <tr class="club-table-line">
                   <td>
@@ -75,7 +75,10 @@
           
         <br>
         <a href='/club/new'>새 글 작성</a>
+        <%= paginate @club %>
     </div>
+    
+    
     
     <%= render 'application/sidebar_right' %>
 

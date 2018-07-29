@@ -212,6 +212,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   pry-rails
   rails (= 4.2.5)
   rails_db
