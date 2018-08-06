@@ -1,8 +1,89 @@
-<h1>새 글을 등록해 보아요! - 동아리</h1>
+  <!-- Container -->
+  <div>검색창(Gem 이용)</div>
+  <br><br>
+  <div class="club_menu">
+    <ul>
+      <li><a href="#" class="club_menu_click">전체</a></li>
+      <li><a href="#">문화/예술/공연</a></li>
+      <li><a href="#">봉사/사회활동</a></li>
+      <li><a href="#">학술/교양</a></li>
+      <li><a href="#">기타</a></li>
+    </ul>
+  </div>
+  <div>
+    <hr class="club_hr border-color2">
+  </div>
+
+
+  <div class="club_content1 l-fixed">
+    <!-- 포스터  -->
+    <div class="club_poster border-color1">
+      <img src="/assets/1.jpg" alt="a" class="img_poster">
+    </div>
+
+    <!-- 동아리 -->
 <form action='/club' method='post'> 
     <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
-    <input name='input_title' type='text'></input>
-    <input name='input_content' type='text'></input>
+    <div class="club_poster_info border-color1">
+      <h1>
+        <input name='input_title' type='text' placeholder='동아리 이름을 적어주세요.' required class='input_box1'></input>
+        <span class="club_dday_label bg-color2">D-20</span>
+        <span class="club_label_wrap1">
+          <span class="sharing_label">
+            <a href="#">
+              <i class="fas fa-share-alt"></i> 공유
+            </a>
+          </span>
+
+          <span class="heart_label">
+            <a href="#">
+              <i class="far fa-heart"></i> 123
+            </a>
+          </span>
+        </span>
+      </h1>
+        <input type="checkbox" name="check1" value="check1"> 공식 동아리
+        <input type="checkbox" name="check2" value="Bike"> 동방
+      <hr>
+      <div class="info_content_wrap">
+        <div class="info_content1">
+          <h2>지원 자격</h2>
+          <p>
+             <textarea name="input_qualification" cols="25" rows="5" placeholder="지원자격을 입력해주세요." required></textarea>
+          </p>
+        </div>
+        <div class="info_content2">
+          <h2>모집 기간</h2>
+          <p>
+            서류: 18.07.11~18.07.15<br>
+            면접: 18.07.17~18.07.19<br>
+            발표: 18.07.22
+            
+          </p>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+<!-- 동아리 상세정보 -->
+  <div class="poster_details_wrap border-color1 l-fixed">
+    <div class="poster_menu">
+      <ul>
+        <li><a href="#" class="border_bottom_white">상세정보</a></li>
+        <li><a href="#">활동사진</a></li>
+        <li><a href="#">Q&A</a></li>
+      </ul>
+    </div>
+    <div class="poster_details">
+      <h1><input name='input_subtitle' type='text' placeholder="어떤 동아리인지 1줄로 표현해주세요." required class="input_box2"></input></h1>
+      <p><textarea name="input_content" cols="130" rows="8" placeholder="동아리에 대한 상세 내용을 적어주세요." required></textarea></p>
+    </div>
+  </div>
+  
+  <br>
+  <div class="l-fixed">
     <input name='input_mainCategory' type='hidden' value='club'></input>
     <input type='submit'></input>
+  </div>
 </form>

@@ -26,7 +26,6 @@
 <form action='/club/<%= @note.id %>' method='post'>
   <input type="hidden" name="_method" value="patch"> 
   <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
-  
     <div class="club_poster_info border-color1">
       <h1>
         <input name='input_title' type='text' value=<%= @note.title %>></input>
