@@ -786,10 +786,23 @@ body {
   font-size: 12px;
 }
 
-.poster_menu .border_bottom_white {
+.poster_menu {
   border-bottom: 1px solid white;
   margin-bottom: -1px;
 }
+
+.tabs a {
+  display: none;
+  border-bottom: 1px solid rgb(171, 212, 151);
+}
+
+.tabs .on {
+  border: none;
+  border-bottom: 1px solid white;
+  margin-bottom: -1px;
+}
+
+
 
 /* 댓글 기능 */
 .comment_wrap {
