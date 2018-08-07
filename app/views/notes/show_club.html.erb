@@ -77,16 +77,24 @@
   </div>
 
 <!-- 동아리 상세정보 -->
-  <div class="poster_details_wrap border-color1 l-fixed">
+  <div class="poster_details_wrap border-color1 l-fixed tabSet">
     <div class="poster_menu">
-      <ul>
-        <li><a href="#" class="border_bottom_white">상세정보</a></li>
-        <li><a href="#">활동사진</a></li>
-        <li><a href="#">Q&A</a></li>
+      <ul class="tabs">
+        <li><a href="#panel1-1" class="on">상세정보</a></li>
+        <li><a href="#panel1-2">활동사진</a></li>
+        <li><a href="#panel1-3">Q&A</a></li>
       </ul>
     </div>
-    <div class="poster_details">
+    <div class="poster_details panel" id="panel1-1">
       <h1>상세 정보</h1>
+      <p><%= @note.content %></p>
+    </div>
+    <div class="poster_details panel" id="panel1-2">
+      <h1>활동 사진</h1>
+      <p><%= @note.content %></p>
+    </div>
+    <div class="poster_details panel" id="panel1-3">
+      <h1>Q&A</h1>
       <p><%= @note.content %></p>
     </div>
   </div>
