@@ -32,8 +32,6 @@ Rails.application.routes.draw do
   # Destroy
   delete '/club/:id' => 'notes#destroy' 
   
-
-
   #### site
   get '/club_content' => 'sites#club_content'
   get '/competition' => 'sites#competition'
@@ -44,14 +42,8 @@ Rails.application.routes.draw do
   
   # Destroy
   delete '/comments/:id' => 'comments#destroy'
-  
-  
 
-  
-  
+
   ### 메인 페이지
   root to: 'sites#index'
 end
-
-
-  

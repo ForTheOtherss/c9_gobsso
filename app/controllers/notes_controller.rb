@@ -29,7 +29,9 @@ class NotesController < ApplicationController
     def create
         n = Note.new
         n.title = params[:input_title]
+        n.subtitle = params[:input_subtitle]
         n.content = params[:input_content]
+        n.qualification = params[:input_qualification]
         n.mainCategory = params[:input_mainCategory]
         n.user = current_user
         n.save
