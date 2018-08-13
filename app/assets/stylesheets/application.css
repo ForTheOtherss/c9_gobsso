@@ -344,7 +344,7 @@ body {
   display: block;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   color: black;
   font-size: 17px;
   text-decoration: none;
@@ -482,15 +482,12 @@ body {
 
 .club_category {
   color: white;
-  padding: 4px;
+  padding: 1px 4px 1px 4px;
   font-size: 12px;
   margin: 2px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
-.club_category_1 {
-  background-color: lightgreen;
-}
 
 .club_category_2 {
   background-color: #6699ff;
@@ -528,15 +525,12 @@ body {
 }
 .club-table-line {
   border: 1px solid rgb(231, 231, 231);
+  margin-top: 3px;
 }
 .club_board {
     width: 100%;
     border: 1.5px solid;
     border-collapse: collapse;
-}
-
-.club_board tbody:nth-child(2n-1){
-  background-color: rgb(231, 231, 231);
 }
 
 .club_board th {
@@ -545,8 +539,9 @@ body {
 }
 
 .club_board td {
-    padding: 12px;
-    height: 10px;
+    padding-top: 2px;
+    height: 70px;
+    box-sizing: border-box;
 }
 
 .club_board img {
@@ -569,7 +564,9 @@ body {
 
 .club-main-title {
   float: left;
-  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .club_board .col-1 {
@@ -577,15 +574,18 @@ body {
     text-align: left;
 }
 
+.club-etc-text {
+  float: right;
+  margin-right: 5px;
+}
 
 .club-etc-text p {
   margin: 0;
-  font-size: 12px;
+  font-size: 10px;
   text-align: right;
   font-weight: 600;
   margin-bottom: 1.5px;
   width: 100px;
-  float: right;
 }
 
 .fa-thumbs-up {
@@ -1044,9 +1044,6 @@ body {
   border-radius: 10px;
 }
 
-.competition_category_1 {
-  background-color: lightgreen;
-}
 
 .comp_board_dday {
   font-weight: bold;
@@ -1073,19 +1070,21 @@ body {
 
 /* sidebar-left */
 .favorite-main-text {
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 }
 .favorite-main {
   font-size: 18px;
   font-weight: 700;
+  margin-left: 10px;
 }
 .favorite-content {
   border: 1.5px solid;
   width: 240px;
   height: 70px;
-  padding: 10px;
+  padding: 8px 5px 5px 10px;
   box-sizing: border-box;
   margin-bottom: -1.5px;
+  position: relative;
 }
 
 .favorite-img {
@@ -1093,7 +1092,7 @@ body {
   width: 48px;
   height: 48px;
   margin-right: 10px;
-  margin-top: -1px;
+  margin-top: 1px;
 }
 
 .favorite-text {
@@ -1103,13 +1102,26 @@ body {
 .favorite-text h1 {
   font-size: 14px;
   margin: 0;
-  margin-bottom: 2px;
 }
 
 .favorite-text p {
   font-size: 10px;
   margin: 0;
-  margin-bottom: 2px;
+}
+
+.favorite-dday {
+  font-size: 13px;
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  letter-spacing: 1px;
+}
+
+.favorite-star {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 16px;
 }
 
 
@@ -1124,3 +1136,17 @@ body {
 .input_box2 {
   width: 900px;
 }
+
+.board-button {
+  display: block;
+  border: 1px solid;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+
+
+
