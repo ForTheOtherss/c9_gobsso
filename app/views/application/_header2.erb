@@ -1,0 +1,21 @@
+            <div class="gnb_wrap gnb_wrap2 l-fixed mgn-pd_0">
+        <!-- 로고 -->
+        <div class="logo">
+          <h1>
+            <%= link_to 'TeamMate'.html_safe, 
+            root_path, :class => "logo_white" %>
+          </h1>
+        </div>
+        <!-- GNB -->
+        <nav class="gnb_nav">
+          <ul>
+          <% if user_signed_in? %>
+            <li><a href="#">마이페이지</a></li>
+            <li><%= link_to '로그아웃', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to '공지사항', new_user_registration_path %></li>
+            <li><%= link_to '로그인 / 회원가입', new_user_session_path %></li>
+          <% end %>
+          </ul>
+        </nav>
+      </div>

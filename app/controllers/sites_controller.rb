@@ -19,6 +19,7 @@ class SitesController < ApplicationController
     
     
     def index
+        @header = 11;
     end
     
     def competition

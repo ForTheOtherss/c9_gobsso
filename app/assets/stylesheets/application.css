@@ -13,9 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 body {
   margin: 0;
-  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .mgn-pd_0 {
@@ -99,8 +102,16 @@ body {
   clear: both;
 }
 
-.gnb_wrap {
+.logo_position {
+  margin-top: -10px;
+}
+.gnb_position {
+  margin-top: -5px;
+}
+
+.gnb_wrap2 {
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 
@@ -233,7 +244,7 @@ body {
 }
 
 .container_nav:hover {
-  border-color: rgb(171, 212, 151);
+  border-color: #ACD598;
   box-shadow:0px 0px 1px 1px #999;
   background-color: #EEEEEE;
 }
@@ -243,6 +254,23 @@ body {
 .container_nav i {
   font-size: 400%;
   color: coral;
+}
+
+.menu-icon {
+  width: 110px;
+  height: 80px;
+  margin-bottom: -10px;
+}
+
+.menu-icon2 {
+  width: 110px;
+  height: 80px;
+  margin-left: -18px;
+}
+
+.menu-icon3 {
+  width: 110px;
+  height: 80px;
 }
 
 .menu-text-wrap {
@@ -747,7 +775,7 @@ body {
 }
 
 .poster_menu {
-  border-bottom: 1px solid rgb(171, 212, 151);
+  border-bottom: 1px solid #ACD598;
 }
 
 .poster_menu ul {
@@ -773,7 +801,7 @@ body {
 .poster_menu li {
   float:left;
   width: auto;
-  border-right: 1px solid rgb(171, 212, 151);
+  border-right: 1px solid #ACD598;
   width: 80px;
   text-align: center;
 }
@@ -799,7 +827,7 @@ body {
 
 .tabs a {
   display: none;
-  border-bottom: 1px solid rgb(171, 212, 151);
+  border-bottom: 1px solid #ACD598;
 }
 
 .tabs .on {
