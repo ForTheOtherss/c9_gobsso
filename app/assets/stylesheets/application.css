@@ -1149,4 +1149,72 @@ body {
 }
 
 
+/*kaminari*/
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 5px 5px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 50px;
+    margin: 5px;
+    font-size: 13px;
+    color: black;
+}
 
+
+
+.pagination .first>span {
+    display: none;
+}
+
+.pagination .last>span {
+  display: none;
+}
+
+.pagination .prev>span {
+  display: none;
+}
+
+.pagination .next>span {
+  display: none;
+}
+
+.pagination .first a {
+  border: none;
+  color: #ACD598;
+}
+
+.pagination .last a{
+    border: none;
+    color: #ACD598;
+}
+.pagination .prev a {
+    border: none;
+    color: #ACD598;
+}
+.pagination .next a {
+    border: none;
+    color: #ACD598;
+}
+.page {
+    padding : 0;
+    float: none;
+    border: none;
+}
+
+.pagination span.current {
+  background-color: #ACD598;
+  color: white;
+}
+
+.pagination {
+  display: block;
+  width: 570px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
