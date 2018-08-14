@@ -3,7 +3,7 @@
         <div class="mypage-nav-content">
             <h1>계정</h1>
             <ul>
-                <a href="#"><li class="mypage-list, <%= @mypage ? @mypage : 'mypage-gray' %>">내 정보 관리</li></a>
+                <a href=<%= @mypage %>><li class="mypage-list, <%= @mypage == '/info' ? 'mypage-list-current color1' : 'mypage-list' %>">내 정보 관리</li></a>
                 <a href="#"><li>내 정보 관리</li></a>
                 <a href="#"><li>내 정보 관리</li></a>
             </ul>
@@ -11,7 +11,7 @@
         <div class="mypage-nav-content">
             <h1>활동</h1>
             <ul>
-                <a href="#"><li>내 정보 관리</li></a>
+                <a href='/notes_list'><li class="mypage-list, <%= @mypage == '/notes_list' ? 'mypage-list-current color1' : 'mypage-list' %>">내 정보 관리</li></a>
                 <a href="#"><li>내 정보 관리</li></a>
                 <a href="#"><li>내 정보 관리</li></a>
                 <a href="#"><li>내 정보 관리</li></a>

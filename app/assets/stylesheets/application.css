@@ -77,7 +77,7 @@ body {
 #mypage-nav {
   width: 180px;
   margin-right: 20px;
-  margin-top: 93px;
+  margin-top: 60px;
 }
 
 #mypage-info {
@@ -1270,7 +1270,7 @@ body {
   border-bottom: 1px solid rgb(200, 200, 200);
   padding: 8px 6px 4px 9px;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 
