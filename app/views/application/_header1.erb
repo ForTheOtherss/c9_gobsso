@@ -19,7 +19,7 @@
         <nav class="gnb_nav gnb_position">
           <ul>
           <% if user_signed_in? %>
-            <li><a href="#">마이페이지</a></li>
+            <li><a href="/mypage/info">마이페이지</a></li>
             <li><%= link_to '로그아웃', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to '공지사항', new_user_registration_path %></li>

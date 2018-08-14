@@ -1,24 +1,5 @@
 <div id="mypage-container" class="s-horizon_wrap">
-    <div id="mypage-nav" class="s-horizon">
-        <div class="mypage-nav-content">
-            <h1>계정</h1>
-            <ul>
-                <a href=<%= @mypage %>><li class="mypage-list, <%= @mypage == '/info' ? 'mypage-list-current color1' : 'mypage-list' %>">내 정보 관리</li></a>
-                <a href="#"><li>내 정보 관리</li></a>
-                <a href="#"><li>내 정보 관리</li></a>
-            </ul>
-        </div>
-        <div class="mypage-nav-content">
-            <h1>활동</h1>
-            <ul>
-                <a href='/notes_list'><li class="mypage-list, <%= @mypage == '/notes_list' ? 'mypage-list-current color1' : 'mypage-list' %>">내 정보 관리</li></a>
-                <a href="#"><li>내 정보 관리</li></a>
-                <a href="#"><li>내 정보 관리</li></a>
-                <a href="#"><li>내 정보 관리</li></a>
-            </ul>
-        </div>
-    </div>
-    
+    <%= render 'mypage/nav' %>
     
     <div id="mypage-info" class="s-horizon">
         <h1>마이페이지</h1>
@@ -30,30 +11,30 @@
             <div class="s-horizon">
                 <p>
                     <span class="info_subtitle">이름</span>
-                    <span class="info_content">전다현</span>
+                    <span class="info_content"><%= current_user.name %></span>
                 </p>
                 <p>
                     <span class="info_subtitle">아이디</span>
-                    <span class="info_content">전다현</span>
+                    <span class="info_content">ㅁㅁㅁ</span>
                 </p>
                 <p>
                     <span class="info_subtitle">닉네임</span>
-                    <span class="info_content">전다현</span>
+                    <span class="info_content">ㅁㅁㅁ</span>
                 </p>
                 <p>
                     <span class="info_subtitle">이메일</span>
-                    <span class="info_content">전다현</span>
+                    <span class="info_content"><%= current_user.email %></span>
                 </p>
                 <p>
                     <span class="info_subtitle">학과</span>
-                    <span class="info_content">전다현</span>
+                    <span class="info_content">ㅁㅁㅁ</span>
                 </p>
             </div>
         </div>
         <hr class="info_line"></hr>
-        <div>
-            <span>수정 </span>
-            <span> 비밀번호 변경</span>
+        <div class="mypage_btn_wrap">
+            <span class="mypage_btn1">수정</span>
+            <span class="mypage_btn1">비밀번호 변경</span>
         </div>
     </div>
 </div>

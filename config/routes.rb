@@ -45,8 +45,8 @@ Rails.application.routes.draw do
 
 
   #### MyPage
-  get '/info' => 'mypage#info'
-  get '/notes_list' => 'mypage#notes_list'
+  get '/mypage/info' => 'mypage#info'
+  get '/mypage/notes_list' => 'mypage#notes_list'
 
   ### 메인 페이지
   root to: 'sites#index'
