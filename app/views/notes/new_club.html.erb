@@ -22,7 +22,7 @@
     </div>
 
     <!-- 동아리 -->
-<form action='/club' method='post'> 
+<form action='/club' method='post' name='aaa'> 
     <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
     <div class="club_poster_info border-color1">
       <h1>
@@ -42,8 +42,8 @@
           </span>
         </span>
       </h1>
-        <input type="checkbox" name="check1" value="check1"> 공식 동아리
-        <input type="checkbox" name="check2" value="Bike"> 동방
+        <input type="checkbox" name="input_check1"> 공식 동아리
+        <input type="checkbox" name="input_check2"> 동방
       <hr>
       <div class="info_content_wrap">
         <div class="info_content1">

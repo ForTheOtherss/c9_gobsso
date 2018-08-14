@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20180721070519) do
     t.text     "qualification"
     t.text     "content"
     t.string   "mainCategory"
+    t.string   "check1"
+    t.string   "check2"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
