@@ -44,6 +44,9 @@ Rails.application.routes.draw do
   delete '/comments/:id' => 'comments#destroy'
 
 
+  #### MyPage
+  get '/info' => 'mypage#info'
+
   ### 메인 페이지
   root to: 'sites#index'
 end

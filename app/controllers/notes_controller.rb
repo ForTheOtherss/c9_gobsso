@@ -33,6 +33,8 @@ class NotesController < ApplicationController
         n.content = params[:input_content]
         n.qualification = params[:input_qualification]
         n.mainCategory = params[:input_mainCategory]
+        n.check1 = params[:input_check1]
+        n.check2 = params[:input_check2]
         n.user = current_user
         n.save
         

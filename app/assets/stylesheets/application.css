@@ -68,6 +68,21 @@ body {
   width: 180px;
 }
 
+#mypage-container {
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mypage-nav {
+  width: 180px;
+  margin-right: 20px;
+  margin-top: 93px;
+}
+
+#mypage-info {
+  width: 580px;
+}
 
 /* div들 가로로 정렬 */
 .s-horizon {
@@ -1083,8 +1098,9 @@ body {
   height: 70px;
   padding: 8px 5px 5px 10px;
   box-sizing: border-box;
-  margin-bottom: -1.5px;
+  margin-bottom: -1px;
   position: relative;
+  border-collapse: collapse;
 }
 
 .favorite-img {
@@ -1217,4 +1233,67 @@ body {
   height: 50px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* 마이페이지(My page) */
+.mypage-nav-content {
+  margin-bottom: 30px;
+}
+
+#mypage-nav h1 {
+  display: block;
+  border: solid 1px rgb(200, 200, 200);
+  font-size: 16px;
+  padding: 1px 5px 1px 5px;
+  margin: 5px 0 0 0;
+}
+
+#mypage-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+}
+
+#mypage-nav a {
+  text-decoration: none;
+}
+
+.mypage-list {
+  color: rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(200, 200, 200);
+  padding: 8px 6px 4px 9px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.mypage-list-current {
+  border-bottom: 1px solid rgb(200, 200, 200);
+  padding: 8px 6px 4px 9px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+
+.info-user img {
+  width: 100px;
+  height: 100px;
+  margin-top: 30px;
+  margin-right: 30px;
+  margin-left: 10px;
+}
+
+.info_subtitle {
+  display: inline-block;
+  text-align: right;
+  width: 50px;
+  font-weight: 500;
+}
+
+.info_content {
+  color: rgb(150, 150, 150);
+  margin-left: 20px;
+}
+
+.info_line {
+  color: rgb(180, 180, 180);
 }

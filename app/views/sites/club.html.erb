@@ -52,8 +52,12 @@
                       <div class="s-horizon">
                         <h1 class="club-title-text black2">
                           <%= club.title %>
-                          <span class="club_category bg-color1">공식 동아리</span>
-                          <span class="club_category club_category_2">동방</span>
+                          <% if club.check1 == "on" %>
+                            <span class="club_category bg-color1">공식 동아리</span>
+                          <% end %>
+                          <% if club.check2 == "on" %>
+                            <span class="club_category club_category_2">동방</span>
+                          <% end %>
                           <span class="club_category club_category_3">마감</span>
                           </h1>
                         <p class="club-subtitle-text black3">멋쟁이 사자처럼은 비전공자도 코딩을 할 수 있는 동아리입니다.</p>

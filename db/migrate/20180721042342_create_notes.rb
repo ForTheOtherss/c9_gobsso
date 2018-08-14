@@ -6,6 +6,8 @@ class CreateNotes < ActiveRecord::Migration
       t.text :qualification
       t.text :content
       t.string :mainCategory
+      t.string :check1
+      t.string :check2
       t.references :user, foreign_key: true
 
       t.timestamps null: false
