@@ -57,7 +57,7 @@ body {
 
 #club-content {
   width: 580px;
-  margin: 0 10px;s
+  margin: 0 10px;
 }
 
 #club-sidebar-left {
@@ -69,7 +69,7 @@ body {
 }
 
 #mypage-container {
-  width: 1024px;
+  width: 780px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -81,6 +81,10 @@ body {
 }
 
 #mypage-info {
+  width: 580px;
+}
+
+#mypage-notes_list {
   width: 580px;
 }
 
@@ -1296,4 +1300,45 @@ body {
 
 .info_line {
   color: rgb(180, 180, 180);
+}
+
+.mypage_btn1 {
+  background-color: rgb(200, 200, 200);
+  color: white;
+  padding: 1px 8px 1px 8px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 6px;
+}
+
+.mypage_btn2 {
+  background-color: rgb(200, 200, 200);
+  color: white;
+  padding: 0.5px 5px 0.5px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 300;
+  margin-left: 2px;
+}
+
+.mypage_btn3 {
+  color: white;
+  padding: 0.5px 5px 0.5px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 300;
+  margin-left: 2px;
+}
+
+.mypage_btn_wrap {
+  text-align: right;
+}
+
+.mypage_btn_wrap2 {
+  /*margin-top: 20px;*/
+}
+
+.club-etc-text .mypage_applicants {
+  font-size: 15px;
 }

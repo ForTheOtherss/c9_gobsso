@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180721070519) do
+ActiveRecord::Schema.define(version: 20180817113637) do
+
+  create_table "clubs", force: :cascade do |t|
+    t.integer  "field"
+    t.integer  "official"
+    t.integer  "room"
+    t.integer  "size"
+    t.integer  "note_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"
@@ -26,8 +36,6 @@ ActiveRecord::Schema.define(version: 20180721070519) do
     t.text     "qualification"
     t.text     "content"
     t.string   "mainCategory"
-    t.string   "check1"
-    t.string   "check2"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

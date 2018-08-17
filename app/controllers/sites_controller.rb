@@ -26,10 +26,10 @@ class SitesController < ApplicationController
     end
     
     def study
-        @notes = Note.where(mainCategory: 'study').order("created_at DESC").page params[:page]
+        @notes = Note.where(mainCategory: 'study').order("created_at DESC").page(params[:page])
     end
     
     def club
-        @club = Note.where(mainCategory: 'club').order("created_at DESC").page params[:page]
+        @notes = Note.where(mainCategory: 'club').order("created_at DESC").page(params[:page])
     end
 end

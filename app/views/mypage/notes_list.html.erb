@@ -1,64 +1,45 @@
 <div id="mypage-container" class="s-horizon_wrap">
-    <div id="mypage-nav" class="s-horizon">
-        <div class="mypage-nav-content">
-            <h1>계정</h1>
-            <ul>
-                <a href='/info'><li class="mypage-list, <%= @mypage == '/info' ? 'mypage-list-current color1' : 'mypage-list' %>">
-                    내 정보 관리
-                </li></a>
-                <a href='#'><li class="mypage-list, <%= @mypage == '#' ? 'mypage-list-current color1' : 'mypage-list' %>">
-                    회원 탈퇴
-                </li></a>
-            </ul>
-        </div>
-        <div class="mypage-nav-content">
-            <h1>활동</h1>
-            <ul>
-                <a href='/notes_list'><li class="mypage-list, <%= @mypage == '/notes_list' ? 'mypage-list-current color1' : 'mypage-list' %>">
-                    게시물 관리
-                </li></a>
-                <a href='#'><li class="mypage-list, <%= @mypage == '#' ? 'mypage-list-current color1' : 'mypage-list' %>">
-                    즐겨찾기
-                </li></a>
-            </ul>
-        </div>
-    </div>
+    <%= render 'mypage/nav' %>
     
-    
-    <div id="mypage-info" class="s-horizon">
+    <div id="mypage-notes_list" class="s-horizon">
         <h1>마이페이지</h1>
-        <div class="s-horizon_wrap">
-            <div class="s-horizon info-user">
-                <img src="/assets/user.png"></img>
-            </div>
-            
-            <div class="s-horizon">
-                <p>
-                    <span class="info_subtitle">이름</span>
-                    <span class="info_content">전다현</span>
-                </p>
-                <p>
-                    <span class="info_subtitle">아이디</span>
-                    <span class="info_content">전다현</span>
-                </p>
-                <p>
-                    <span class="info_subtitle">닉네임</span>
-                    <span class="info_content">전다현</span>
-                </p>
-                <p>
-                    <span class="info_subtitle">이메일</span>
-                    <span class="info_content">전다현</span>
-                </p>
-                <p>
-                    <span class="info_subtitle">학과</span>
-                    <span class="info_content">전다현</span>
-                </p>
-            </div>
-        </div>
-        <hr class="info_line"></hr>
-        <div>
-            <span>수정 </span>
-            <span> 비밀번호 변경</span>
-        </div>
+        <h2>스터디</h2>
+
+        <h2>공모전</h2>
+        
+        <h2>동아리</h2>
+          <table class="club_board border-color2">
+            <% @club.each do |club| %>
+              <tbody>
+                <tr class="club-table-line">
+                  <td>
+                    <img src="/assets/1.jpg" alt="a" class="img-board s-horizon">
+                    <a href='/club/<%= club.id %>'>
+                      <div class="s-horizon">
+                        <h1 class="club-title-text black2">
+                          <%= club.title %>
+                          <% if club.check1 == "on" %>
+                            <span class="club_category bg-color1">공식 동아리</span>
+                          <% end %>
+                          <% if club.check2 == "on" %>
+                            <span class="club_category club_category_2">동방</span>
+                          <% end %>
+                          <span class="club_category club_category_3">마감</span>
+                          </h1>
+                        <p class="club-subtitle-text black3">멋쟁이 사자처럼은 비전공자도 코딩을 할 수 있는 동아리입니다.</p>
+                      </div>
+                    </a>
+                    <div class="club-etc-text">
+                        <p class="color1 mypage_applicants">2/5</p>
+                        <div class="mypage_btn_wrap2">
+                            <span class="mypage_btn3 bg-color1">지원자 보기</span>
+                            <span class="mypage_btn2">수정</span>
+                        </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <% end %>
+          </table>
     </div>
 </div>

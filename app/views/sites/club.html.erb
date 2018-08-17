@@ -43,19 +43,19 @@
             <!--</thead>-->
 
 
-            <% @club.each do |club| %>
+            <% @notes.each do |n| %>
               <tbody>
                 <tr class="club-table-line">
                   <td>
                     <img src="/assets/1.jpg" alt="a" class="img-board s-horizon">
-                    <a href='/club/<%= club.id %>'>
+                    <a href='/club/<%= n.id %>'>
                       <div class="s-horizon">
                         <h1 class="club-title-text black2">
-                          <%= club.title %>
-                          <% if club.check1 == "on" %>
+                          <%= n.title %>
+                          <% if n.club.official == 1 %>
                             <span class="club_category bg-color1">공식 동아리</span>
                           <% end %>
-                          <% if club.check2 == "on" %>
+                          <% if n.club.room == 1 %>
                             <span class="club_category club_category_2">동방</span>
                           <% end %>
                           <span class="club_category club_category_3">마감</span>
@@ -77,7 +77,7 @@
           
           
 
-        <%= paginate @club %>
+        <%= paginate @notes %>
     </div>
     
     
