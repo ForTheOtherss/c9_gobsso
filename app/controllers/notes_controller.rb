@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-    before_action :authenticate_user!
+    # before_action :authenticate_user!
     before_action :lnb_class1, only: [:edit_study, :new_study, :show_study]
     before_action :lnb_class2, only: [:edit_comp, :new_comp, :show_comp]
     before_action :lnb_class3, only: [:edit_club, :new_club, :show_club]
@@ -33,12 +33,23 @@ class NotesController < ApplicationController
         n.content = params[:input_content]
         n.qualification = params[:input_qualification]
         n.mainCategory = params[:input_mainCategory]
-        n.check1 = params[:input_check1]
-        n.check2 = params[:input_check2]
         n.user = current_user
         n.save
         
+        c = Club.new
+        c.field = params[:input_field]
+        c.official = params[:input_type]
+        c.room = params[:input_room]
+        c.size = params[:input_size]
+        c.note = n
+        c.save
+        
+
+        
+
+        
         redirect_to "/#{params[:input_mainCategory]}"
+        # binding.pry
     end
     
     
