@@ -10,6 +10,12 @@ class CreateClubs < ActiveRecord::Migration
       t.integer :size
       t.datetime :recruit_start
       t.datetime :recruit_end
+      
+      t.string :contact
+      t.text :question1
+      t.text :question2
+      
+      
       t.belongs_to :note, foreign_key: true
       
       t.timestamps null: false

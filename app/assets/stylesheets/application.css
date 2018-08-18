@@ -1364,6 +1364,33 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
+.input_ver1-1 {
+  width: 684px;
+  height: 130px;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: rgb(150, 150, 150);
+}
+
+.input_ver2 {
+  border: none;
+  border-bottom: 1px solid rgb(180, 180, 180);
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.input_ver2::placeholder {
+  font-weight: 400;
+  font-size: 13px;
+  color: rgb(200, 200, 200);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.input_ver2:focus {
+  outline: none;
+}
 .club_new_wrap {
   margin-top: 50px;
 }

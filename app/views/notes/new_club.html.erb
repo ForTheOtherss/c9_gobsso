@@ -19,6 +19,8 @@
     <form action='/club' method='post' name='aaa'> 
       <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
       <input name='input_mainCategory' type='hidden' value='club'></input>
+      
+      <!--동아리 정보-->
       <div class="club_new_container">
         <h1 class="club_new_title">동아리 정보</h1>
         <div class="club_new_content">
@@ -61,6 +63,7 @@
         </div>
       </div>  
       
+      <!--모집 공고-->
       <div class="club_new_container">
         <h1 class="club_new_title">모집 공고</h1>
         <div class="club_new_content">
@@ -83,6 +86,26 @@
           <p class="club_new_subtitle">상세 내용*</p>
             <textarea name='input_content3' class='input_ver1' cols=93 rows=10 placeholder="※활동 내용, 모임 시간 및 장소, 모집 대상, 지원 방법, 연락처 등 상세 내용을 자유롭게 적어주세요." required ></textarea>
           <p class="club_new_subtitle"><활동사진 첨부 기능></p>
+        </div>
+      </div>
+      
+      <!--지원서 양식-->
+      <div class="club_new_container">
+        <h1 class="club_new_title">지원서 양식</h1>
+        <div class="club_new_content">
+          <p class="club_new_notice">* 별표 표시는 필수 항목입니다.</p>
+          <p class="club_new_subtitle">전화번호 혹은 카카오톡ID</p>
+          <input name='input_contact' class='input_ver1' size="89" type='text' required></input>
+        
+          <p class="club_new_subtitle">질문 항목</p>
+            <input name='input_question1' class='input_ver2' size="89" type='text' placeholder='질문을 입력하세요.' required></input>
+            <div class="input_ver1 input_ver1-1">
+              지원자가 질문에 대한 답변을 적는 공간입니다.
+            </div>
+            
+            
+            
+
         </div>
       </div>
       <input type='submit'></input>

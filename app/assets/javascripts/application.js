@@ -55,3 +55,9 @@ $(function(){
     });
   });
 });
+
+$(function(){
+  $('.input_ver1-1').click(function(){
+    
+  });
+});

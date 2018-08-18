@@ -45,6 +45,8 @@ class NotesController < ApplicationController
         c.size = params[:input_size]
         c.recruit_start = params[:recruit_start]
         c.recruit_end = params[:recruit_end]
+        c.contact = params[:input_contact]
+        c.question1 =params[:input_question1]
         c.note = n
         c.save
         
