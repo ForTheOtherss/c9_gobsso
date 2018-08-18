@@ -29,14 +29,16 @@ class NotesController < ApplicationController
     def create
         n = Note.new
         n.title = params[:input_title]
-        n.subtitle = params[:input_subtitle]
-        n.content = params[:input_content]
-        n.qualification = params[:input_qualification]
+        n.content1 = params[:input_content1]
+        n.content2 = params[:input_content2]
+        n.content3 = params[:input_content3]
         n.mainCategory = params[:input_mainCategory]
         n.user = current_user
         n.save
         
         c = Club.new
+        c.title = params[:club_title]
+        c.subtitle = params[:club_subtitle]
         c.field = params[:input_field]
         c.official = params[:input_type]
         c.room = params[:input_room]
@@ -44,9 +46,6 @@ class NotesController < ApplicationController
         c.note = n
         c.save
         
-
-        
-
         
         redirect_to "/#{params[:input_mainCategory]}"
         # binding.pry

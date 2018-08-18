@@ -60,6 +60,12 @@ body {
   margin: 0 10px;
 }
 
+#club-new-note {
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #club-sidebar-left {
   width: 240px;
 }
@@ -87,6 +93,8 @@ body {
 #mypage-notes_list {
   width: 580px;
 }
+
+
 
 /* div들 가로로 정렬 */
 .s-horizon {
@@ -1144,19 +1152,6 @@ body {
   font-size: 16px;
 }
 
-
-.input_box1 {
-  width: 300px;
-  height: 25px;
-  font-size: 20px;
-  padding: 5px;
-  font-weight: 800;
-}
-
-.input_box2 {
-  width: 900px;
-}
-
 .board-button {
   display: block;
   border: 1px solid;
@@ -1342,3 +1337,68 @@ body {
 .club-etc-text .mypage_applicants {
   font-size: 15px;
 }
+
+/* 동아리 게시글 작성 페이지 */
+.input_ver1 {
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(235, 235, 235);
+  padding: 7px;
+  font-family: 'Noto Sans KR', sans-serif;
+  
+}
+
+.input_ver1::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(150, 150, 150);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.club_new_wrap {
+  margin-top: 50px;
+}
+
+.club_new_container {
+  border: 1px solid rgb(220, 220, 220);
+  padding: 15px 20px 15px 20px;
+  margin-top: 20px;
+}
+
+.club_new_title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.club_new_subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.club_new_content {
+  margin-left: 13px;
+}
+
+.club_new_notice { 
+  font-size: 12px;
+  color: rgb(231, 48, 33);
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 15px
+}
+
+.club_new_radiobox {
+  border: 1px solid rgb(240, 240, 240);
+  padding: 5px;
+  background-color: rgb(253, 253, 253);
+  width: 680px;
+  font-size: 13px;
+  color: rgb(100, 100, 100);
+  font-weight: 500;
+}
+
+.club_new_radiobox input[type="radio"] {
+  width: 25px;
+}
+

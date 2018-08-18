@@ -2,9 +2,10 @@ class CreateNotes < ActiveRecord::Migration
   def change
     create_table :notes do |t|
       t.string :title
-      t.string :subtitle
-      t.text :qualification
-      t.text :content
+      
+      t.text :content1
+      t.text :content2
+      t.text :content3
       t.string :mainCategory
       t.references :user, foreign_key: true
 
