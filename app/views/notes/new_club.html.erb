@@ -23,20 +23,21 @@
         <h1 class="club_new_title">동아리 정보</h1>
         <div class="club_new_content">
           <p class="club_new_notice">* 별표 표시는 필수 항목입니다.</p>
+          <p class="club_new_subtitle">기본 정보*</p>
           <input class="input_ver1" size="38" name='club_title' type='text' placeholder='동아리 이름 *' required></input><br>
           <사진 첨부 기능><br>
           <input class="input_ver1" size="89" name='club_subtitle' type='text' placeholder="동아리 한 줄 소개 *" required></input>
           
           <p class="club_new_subtitle">분야*</p>
           <div class="club_new_radiobox">
-            <input type="radio" name="input_field" value=1 checked> <span class="club_new_radio_text">문화/예술/공연</span>
-            <input type="radio" name="input_field" value=2> <span>봉사/사회활동</span>
-            <input type="radio" name="input_field" value=3> <span>학술/교양</span>
-            <input type="radio" name="input_field" value=4> <span>창업/취업</span><br>
-            <input type="radio" name="input_field" value=5> <span>어학</span>
-            <input type="radio" name="input_field" value=6> <span>체육</span>
-            <input type="radio" name="input_field" value=7> <span>친목</span>
-            <input type="radio" name="input_field" value=8> <span>기타</span>
+            <input type="radio" name="input_field" value=1 checked> 문화/예술/공연
+            <input type="radio" name="input_field" value=2> 봉사/사회활동
+            <input type="radio" name="input_field" value=3> 학술/교양
+            <input type="radio" name="input_field" value=4> 창업/취업<br>
+            <input type="radio" name="input_field" value=5> 어학
+            <input type="radio" name="input_field" value=6> 체육
+            <input type="radio" name="input_field" value=7> 친목
+            <input type="radio" name="input_field" value=8> 기타
           </div>
           <p class="club_new_subtitle">동아리 유형*</p>
           <div class="club_new_radiobox">
@@ -64,9 +65,16 @@
         <h1 class="club_new_title">모집 공고</h1>
         <div class="club_new_content">
           <p class="club_new_notice">* 별표 표시는 필수 항목입니다.</p>
-          <input name='input_title' class='input_ver1' size="89" type='text' placeholder='제목 *' required></input><br>
+          <p class="club_new_subtitle">글 제목*</p>
+          <input name='input_title' class='input_ver1' size="89" type='text' placeholder='제목 *' required></input>
           
           <p class="club_new_subtitle">모집 기간*</p>
+            <input type="datetime-local" class="input_ver1"
+               name="recruit_start" value="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>"
+               min="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>">부터 &emsp;
+            <input type="datetime-local" class="input_ver1"
+               name="recruit_end" value="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>" 
+               min="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>"> 까지
           <p class="club_new_subtitle">상세 모집 일정</p>
             <textarea name='input_content1' class='input_ver1' cols=93 rows=6 placeholder="※동아리 별도의 면접 일정이 있다면 적어주세요." required ></textarea>
           <p class="club_new_subtitle">지원자격*</p>
@@ -75,7 +83,6 @@
           <p class="club_new_subtitle">상세 내용*</p>
             <textarea name='input_content3' class='input_ver1' cols=93 rows=10 placeholder="※활동 내용, 모임 시간 및 장소, 모집 대상, 지원 방법, 연락처 등 상세 내용을 자유롭게 적어주세요." required ></textarea>
           <p class="club_new_subtitle"><활동사진 첨부 기능></p>
-            
         </div>
       </div>
       <input type='submit'></input>

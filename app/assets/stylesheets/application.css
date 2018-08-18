@@ -507,6 +507,11 @@ body {
   clear: both;
 }
 
+.club-text-content {
+  width: 435px;
+  padding: 5px;
+}
+
 .club_category {
   color: white;
   padding: 1px 4px 1px 4px;
@@ -519,12 +524,13 @@ body {
 .club_category_2 {
   background-color: #6699ff;
 }
-
-.club_category_3 {
-  background-color: #ff6666;
+.club_dday_color1 {
+  color: rgb(100, 100, 100);
 }
 
-
+.club_dday_color2 {
+  color: #ff6666;
+}
 /* 게시판 */
 .btn2_wrap {
   display: block;
@@ -554,6 +560,9 @@ body {
   border: 1px solid rgb(231, 231, 231);
   margin-top: 3px;
 }
+
+
+
 .club_board {
     width: 100%;
     border: 1.5px solid;
@@ -575,6 +584,7 @@ body {
   vertical-align: middle;
   padding-right: 10px;
   padding-left: 5px;
+  padding-top: 4px;
 }
 
 
@@ -608,11 +618,11 @@ body {
 
 .club-etc-text p {
   margin: 0;
-  font-size: 10px;
+  font-size: 11px;
   text-align: right;
   font-weight: 600;
   margin-bottom: 1.5px;
-  width: 100px;
+  width: 60px;
 }
 
 .fa-thumbs-up {
@@ -1105,7 +1115,7 @@ body {
   margin-left: 10px;
 }
 .favorite-content {
-  border: 1.5px solid;
+  border: 1px solid;
   width: 240px;
   height: 70px;
   padding: 8px 5px 5px 10px;
@@ -1349,7 +1359,7 @@ body {
 
 .input_ver1::placeholder {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   color: rgb(150, 150, 150);
   font-family: 'Noto Sans KR', sans-serif;
 }

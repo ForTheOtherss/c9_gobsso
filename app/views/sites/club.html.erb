@@ -2,7 +2,7 @@
   <!-- 박스 슬라이더 -->
   <link rel="stylesheet" href="/assets/jquery.bxslider.css">
   <script src="/assets/jquery.bxslider.min.js"></script>
-  <% end %>
+<% end %>
 
 
     <div>검색창(Gem 이용)</div>
@@ -44,12 +44,17 @@
 
 
             <% @notes.each do |n| %>
+            
               <tbody>
                 <tr class="club-table-line">
-                  <td>
-                    <img src="/assets/1.jpg" alt="a" class="img-board s-horizon">
+                  <td 
+                  <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0 %>
+                  class="bg-color2"
+                  <% end %>
+                  >
                     <a href='/club/<%= n.id %>'>
-                      <div class="s-horizon">
+                    <img src="/assets/1.jpg" alt="a" class="img-board s-horizon">
+                      <div class="s-horizon club-text-content">
                         <h1 class="club-title-text black2">
                           <%= n.title %>
                           <% if n.club.official == 1 %>
@@ -58,18 +63,23 @@
                           <% if n.club.room == 1 %>
                             <span class="club_category club_category_2">동방</span>
                           <% end %>
-                          <span class="club_category club_category_3">마감</span>
                           </h1>
                         <p class="club-subtitle-text black3"><%= n.club.subtitle %></p>
                       </div>
-                    </a>
+                      </a>
                     <div class="club-etc-text">
-                        <p class="color1">D-1</p>
+                          <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0  %>
+                            <p class='club_dday_color1'>마감</p>
+                          <% elsif ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i == 0 %>
+                            <p class="club_dday_color2">D-day</p>
+                          <% else %>
+                            <p class="color1">D-<%= ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i %></p>
+                          <% end %>
                         <p><i class="far fa-eye black3"></i> 273</p>
                         <p><i class="fas fa-thumbs-up"></i> 15 <i class="fas fa-thumbs-down"></i> 2</p>
                     </div>
+                    
                   </td>
-
                 </tr>
               </tbody>
               <% end %>
@@ -79,8 +89,6 @@
 
         <%= paginate @notes %>
     </div>
-    
-    
     
     <%= render 'application/sidebar_right' %>
 
