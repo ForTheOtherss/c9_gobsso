@@ -71,13 +71,16 @@
           <p class="club_new_subtitle">글 제목*</p>
           <input name='input_title' class='input_ver1' size="89" type='text' placeholder='제목 *' required></input>
           
-          <p class="club_new_subtitle">모집 기간*</p>
-            <input type="datetime-local" class="input_ver1"
-               name="recruit_start" value="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>"
-               min="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>">부터 &emsp;
-            <input type="datetime-local" class="input_ver1"
-               name="recruit_end" value="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>" 
-               min="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>"> 까지
+          <p class="club_new_subtitle">모집 기간*<br>
+          (상시 모집<input type='checkbox' name='always_apply' class="always_apply_checkbox">)</p>
+            <div class="datetime_wrap">
+              <input type="datetime-local" class="input_ver1"
+                 name="recruit_start" value="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>"
+                 min="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>">부터 &emsp;
+              <input type="datetime-local" class="input_ver1"
+                 name="recruit_end" value="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>" 
+                 min="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>"> 까지
+            </div>
           <p class="club_new_subtitle">상세 모집 일정</p>
             <textarea name='input_content1' class='input_ver1' cols=93 rows=6 placeholder="※동아리 별도의 면접 일정이 있다면 적어주세요." required ></textarea>
           <p class="club_new_subtitle">지원자격*</p>
