@@ -8,6 +8,7 @@ class CreateClubs < ActiveRecord::Migration
       t.integer :official
       t.integer :room
       t.integer :size
+      t.string :always_apply
       t.datetime :recruit_start
       t.datetime :recruit_end
       

@@ -43,6 +43,7 @@ class NotesController < ApplicationController
         c.official = params[:input_type]
         c.room = params[:input_room]
         c.size = params[:input_size]
+        c.always_apply = params[:always_apply]
         c.recruit_start = params[:recruit_start]
         c.recruit_end = params[:recruit_end]
         c.contact = params[:input_contact]
@@ -56,7 +57,6 @@ class NotesController < ApplicationController
         c.question8 = params[:input_question8]
         c.question9 = params[:input_question9]
         c.question10 = params[:input_question10]
-
         c.note = n
         c.save
         

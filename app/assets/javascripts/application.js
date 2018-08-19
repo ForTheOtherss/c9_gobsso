@@ -69,3 +69,16 @@ $(function(){
     $('.question_wrap').eq(i).removeAttr('name');
   });
 });
+
+$(function(){
+  // if ($("input:checkbox[name='always_apply']").is(":checked")){
+  //   $('.datetime_wrap').hide();
+  // };
+  $(".always_apply_checkbox").change(function(){
+        if($(".always_apply_checkbox").is(":checked")){
+            $('.datetime_wrap').hide();
+        }else{
+            $('.datetime_wrap').show();
+        }
+    });
+});

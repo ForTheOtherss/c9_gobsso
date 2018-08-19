@@ -44,14 +44,10 @@
 
             <!--마감 되지 않은 글-->
             <% @notes.each do |n| %>
-              <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) >= 0  %>
+              <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) >= 0 || n.club.always_apply == 'on' %>
               <tbody>
                 <tr class="club-table-line">
-                  <td 
-                  <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0 %>
-                  class="bg-color2"
-                  <% end %>
-                  >
+                  <td>
                     <a href='/club/<%= n.id %>'>
                     <img src="/assets/1.jpg" alt="a" class="img-board s-horizon">
                       <div class="s-horizon club-text-content">
@@ -68,7 +64,9 @@
                       </div>
                       </a>
                     <div class="club-etc-text">
-                          <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0  %>
+                          <% if (n.club.always_apply == 'on') %>
+                            <p class="color1">상시 모집</p>
+                          <% elsif (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0  %>
                             <p class='club_dday_color1'>마감</p>
                           <% elsif ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i == 0 %>
                             <p class="club_dday_color2">D-day</p>
@@ -86,7 +84,7 @@
             
             <!--마감 된 글-->
             <% @notes.each do |n| %>
-              <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0  %>
+              <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0 && n.club.always_apply != 'on' %>
               <tbody>
                 <tr class="club-table-line">
                   <td 

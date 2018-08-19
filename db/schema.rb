@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20180817113637) do
     t.integer  "official"
     t.integer  "room"
     t.integer  "size"
+    t.string   "always_apply"
     t.datetime "recruit_start"
     t.datetime "recruit_end"
     t.string   "contact"
