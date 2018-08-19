@@ -57,7 +57,15 @@ $(function(){
 });
 
 $(function(){
-  $('.input_ver1-1').click(function(){
-    
+  var i = 1;
+  $('.question_plus').click(function(){
+    $('.question_wrap').eq(i).show();
+    $('.question_wrap').eq(i).attr('name', 'input_question' + i);
+    i++;
+  });
+  $('.question_trash').click(function(){
+    i--;
+    $('.question_wrap').eq(i).hide();
+    $('.question_wrap').eq(i).removeAttr('name');
   });
 });

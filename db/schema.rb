@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20180817113637) do
     t.integer  "size"
     t.datetime "recruit_start"
     t.datetime "recruit_end"
+    t.string   "contact"
+    t.text     "question1"
+    t.text     "question2"
+    t.text     "question3"
+    t.text     "question4"
+    t.text     "question5"
+    t.text     "question6"
+    t.text     "question7"
+    t.text     "question8"
+    t.text     "question9"
+    t.text     "question10"
     t.integer  "note_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
