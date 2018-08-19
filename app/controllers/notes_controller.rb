@@ -46,7 +46,17 @@ class NotesController < ApplicationController
         c.recruit_start = params[:recruit_start]
         c.recruit_end = params[:recruit_end]
         c.contact = params[:input_contact]
-        c.question1 =params[:input_question1]
+        c.question1 = params[:input_question1]
+        c.question2 = params[:input_question2]
+        c.question3 = params[:input_question3]
+        c.question4 = params[:input_question4]
+        c.question5 = params[:input_question5]
+        c.question6 = params[:input_question6]
+        c.question7 = params[:input_question7]
+        c.question8 = params[:input_question8]
+        c.question9 = params[:input_question9]
+        c.question10 = params[:input_question10]
+
         c.note = n
         c.save
         
