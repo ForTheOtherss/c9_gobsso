@@ -1,9 +1,10 @@
 class NotesController < ApplicationController
-    # before_action :authenticate_user!
+    before_action :authenticate_user!
     before_action :lnb_class1, only: [:edit_study, :new_study, :show_study]
     before_action :lnb_class2, only: [:edit_comp, :new_comp, :show_comp]
     before_action :lnb_class3, only: [:edit_club, :new_club, :show_club]
-    
+    before_action :log_impression, :only=> [:show_club]
+
     
     def lnb_class1
         @study = 'bg-color1 black3'
@@ -17,7 +18,12 @@ class NotesController < ApplicationController
         @club = 'bg-color1 black3'
     end
         
-    
+    def log_impression
+      @hit_post = Note.find(params[:id])
+      # this assumes you have a current_user method in your authentication system
+      @hit_post.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
+    end
+
     
     
     def new_study
@@ -74,6 +80,7 @@ class NotesController < ApplicationController
     
     def show_club
         @note = Note.find(params[:id])
+        impressionist(@note)
     end
     
     def destroy
