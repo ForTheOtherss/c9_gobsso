@@ -25,5 +25,5 @@ class AppliesController < ApplicationController
     def show_apply
         @club = Club.find(params[:id])
     end
-
+    
 end

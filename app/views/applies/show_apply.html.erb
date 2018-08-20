@@ -8,12 +8,50 @@
     <th>연락처</th>
     <th>지원자보기</th>
   </tr>
+  <%# @club.applies.each do |a| %>
   <tr>
     <td>1</td>
     <td>전다현</td> 
     <td>1997/08/06</td>
     <td>컴퓨터공학과</td>
-    <td><%= @club.</td>
+    <td><%#= a.contact %></td>
     <td>보기</td>
   </tr>
+  
+    <!--// 동아리 지원서 작성-->
+  <%# end %>
+  
 </table>
+
+<!--동아리 지원서 작성-->
+      <div id=club-new-apply class="club_new_wrap">
+          <form action='/club/:id/apply' method='post'>
+          <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
+          <input type='hidden' name='club_id' value=<%= @club.id %>>
+      
+            <div class="club_new_container">
+            <h1 class="club_new_title">지원서 양식</h1>
+            <div class="club_new_content">
+              <p class="club_new_notice">* 별표 표시는 필수 항목입니다.</p>
+              <p class="club_new_subtitle">전화번호 혹은 카카오톡ID</p>
+              <input name='input_contact' class='input_ver1' size="89" type='text' 
+              placeholder="지원자가 질문에 대한 답변을 적는 공간입니다." value=<%= a.contact %> required></input>
+            
+              <p class="club_new_subtitle">질문 항목</p>
+                <% for i in 1..10 %>
+                  <% question_name = 'question' + i.to_s %>
+                  <% if @club.send(question_name) != nil %>
+                  <div>
+                    <input name='input_question<%= i %>' value="<%= @club.send(question_name) %>" readonly="readonly" class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.'>
+                    <textarea name='input_answer<%= i %>' class="input_ver1-2" placeholder="지원자가 질문에 대한 답변을 적는 공간입니다."></textarea>
+                  </div>
+                  <% end %>
+                <% end %>
+            </div>
+          </div>
+          <div class="apply_submit_wrap s-horizon_wrap">
+            <input type='submit' value='제출' class="apply_submit apply_submit1 s-horizon"></input>
+            <a href="/club" class="apply_submit apply_submit2 s-horizon">취소</a>
+          </div>
+        </form>
+    </div>
