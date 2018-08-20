@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   #show
   get 'club/:id/apply' => 'applies#show_apply'
   
+  
+  
   #### site
   get '/club_content' => 'sites#club_content'
   get '/competition' => 'sites#competition'
