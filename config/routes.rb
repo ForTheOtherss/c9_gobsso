@@ -33,7 +33,12 @@ Rails.application.routes.draw do
   delete '/club/:id' => 'notes#destroy' 
   
   #### Apply
+  # new, create
   get '/club/:id/apply/new' => 'applies#new_apply'
+  post '/club/:id/apply' => 'applies#create'
+  
+  #show
+  get 'club/:id/apply' => 'applies#show_apply'
 
   
   #### site
@@ -53,10 +58,6 @@ Rails.application.routes.draw do
   #### MyPage
   get '/mypage/info' => 'mypage#info'
   get '/mypage/notes_list' => 'mypage#notes_list'
-
-
-
-
 
   
   ### 메인 페이지

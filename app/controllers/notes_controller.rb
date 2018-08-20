@@ -34,7 +34,7 @@ class NotesController < ApplicationController
         n.content3 = params[:input_content3]
         n.mainCategory = params[:input_mainCategory]
         n.user = current_user
-        n.save
+        
         
         c = Club.new
         c.title = params[:club_title]
@@ -46,7 +46,6 @@ class NotesController < ApplicationController
         c.always_apply = params[:always_apply]
         c.recruit_start = params[:recruit_start]
         c.recruit_end = params[:recruit_end]
-        c.contact = params[:input_contact]
         c.question1 = params[:input_question1]
         c.question2 = params[:input_question2]
         c.question3 = params[:input_question3]
@@ -58,10 +57,10 @@ class NotesController < ApplicationController
         c.question9 = params[:input_question9]
         c.question10 = params[:input_question10]
         
-
-        
         c.note = n
         c.save
+        n.save
+        
         
         
         redirect_to "/#{params[:input_mainCategory]}"

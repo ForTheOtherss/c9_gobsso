@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180817113637) do
+ActiveRecord::Schema.define(version: 20180820040032) do
+
+  create_table "applies", force: :cascade do |t|
+    t.string   "contact"
+    t.text     "answer1"
+    t.text     "answer2"
+    t.text     "answer3"
+    t.text     "answer4"
+    t.text     "answer5"
+    t.text     "answer6"
+    t.text     "answer7"
+    t.text     "answer8"
+    t.text     "answer9"
+    t.text     "answer10"
+    t.integer  "club_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clubs", force: :cascade do |t|
     t.text     "title"
@@ -23,7 +40,6 @@ ActiveRecord::Schema.define(version: 20180817113637) do
     t.string   "always_apply"
     t.datetime "recruit_start"
     t.datetime "recruit_end"
-    t.string   "contact"
     t.text     "question1"
     t.text     "question2"
     t.text     "question3"
@@ -34,16 +50,6 @@ ActiveRecord::Schema.define(version: 20180817113637) do
     t.text     "question8"
     t.text     "question9"
     t.text     "question10"
-    t.text     "answer1"
-    t.text     "answer2"
-    t.text     "answer3"
-    t.text     "answer4"
-    t.text     "answer5"
-    t.text     "answer6"
-    t.text     "answer7"
-    t.text     "answer8"
-    t.text     "answer9"
-    t.text     "answer10"
     t.integer  "note_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
