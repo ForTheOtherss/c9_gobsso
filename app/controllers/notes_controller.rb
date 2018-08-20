@@ -70,7 +70,7 @@ class NotesController < ApplicationController
         
         
         redirect_to "/#{params[:input_mainCategory]}"
-        binding.pry
+        # binding.pry
     end
     
     

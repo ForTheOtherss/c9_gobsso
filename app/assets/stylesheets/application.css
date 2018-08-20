@@ -16,7 +16,7 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-body {
+body, dd{
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
 }
@@ -67,6 +67,12 @@ body {
 }
 
 #club-new-apply {
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#club-show-apply {
   width: 750px;
   margin-left: auto;
   margin-right: auto;
@@ -1493,7 +1499,6 @@ body {
 .club_new_container {
   border: 1px solid rgb(220, 220, 220);
   padding: 15px 20px 15px 20px;
-  margin-top: 20px;
 }
 
 .club_new_title {
@@ -1533,4 +1538,63 @@ body {
 .club_new_radiobox input[type="radio"] {
   width: 25px;
 }
+
+/* show_apply*/
+.show_apply_wrap div {
+  font-size: 14px;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.show_apply_head {
+  background-color: #afd79b;
+  color: white;
+  padding: 6px 0px;
+}
+
+.show_apply_body {
+  color: rgb(80, 80, 80);
+  padding: 12px 0px;
+  border: 1px solid rgb(231, 231, 231);
+}
+
+
+.apply_col1 {
+  width: 7%;
+}
+
+.apply_col2 {
+  width: 13%;
+}
+
+.apply_col3 {
+  width: 20%;
+}
+
+.apply_col4 {
+  width: 20%;
+}
+
+.apply_col5 {
+  width: 20%;
+}
+
+.apply_col6 {
+  width: 20%;
+}
+
+.show_apply_details span{
+  /*display: inline-block;*/
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  /*width: 30px;*/
+  background-color: #afd79b;
+  border-radius: 5px;
+  padding: 1px 8px;
+  color: white;
+  font-weight: 400;
+}
+
+
 

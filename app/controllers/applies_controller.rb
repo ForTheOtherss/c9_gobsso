@@ -17,8 +17,9 @@ class AppliesController < ApplicationController
         a.answer8 = params[:input_answer8]
         a.answer9 = params[:input_answer9]
         a.answer10 = params[:input_answer10]
-        # binding.pry
+        
         a.save
+        # binding.pry
         redirect_to "/club"
     end
     

@@ -56,6 +56,7 @@ $(function(){
   });
 });
 
+
 $(function(){
   var i = 1;
   $('.question_plus').click(function(){
@@ -80,4 +81,30 @@ $(function(){
             $('.datetime_wrap').show();
         }
     });
+});
+
+
+// '지원자 보기 창'에서의 아코디언 기능
+$(function(){
+  $('.accordion').each(function(){
+    var dl = $(this);
+    var dtDetails = dl.find('dt .show_apply_details');
+    var allDd = dl.find('dd');
+    allDd.hide();
+    dtDetails.css('cursor','pointer');
+    dtDetails.click(function(){
+      var dt = $(this).parent();
+      var dd = dt.next();
+      var button = $(this).find('span');
+      if(dd.css('display') == 'none'){
+        dd.show();
+        button.css('background-color', 'rgb(200, 200, 200)');
+        button.text('닫기');
+      } else {
+        dd.hide();
+        button.css('background-color', '#afd79b');
+        button.text('보기');
+      }
+    });
+  });
 });
