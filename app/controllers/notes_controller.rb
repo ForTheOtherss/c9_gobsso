@@ -57,12 +57,15 @@ class NotesController < ApplicationController
         c.question8 = params[:input_question8]
         c.question9 = params[:input_question9]
         c.question10 = params[:input_question10]
+        
+
+        
         c.note = n
         c.save
         
         
         redirect_to "/#{params[:input_mainCategory]}"
-        # binding.pry
+        binding.pry
     end
     
     

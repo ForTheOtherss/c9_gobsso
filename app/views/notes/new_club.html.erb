@@ -98,69 +98,17 @@
         <div class="club_new_content">
           <p class="club_new_notice">* 별표 표시는 필수 항목입니다.</p>
           <p class="club_new_subtitle">전화번호 혹은 카카오톡ID</p>
-          <input name='input_contact' class='input_ver1' size="89" type='text' required></input>
+          <input name='input_contact' class='input_ver1' size="89" type='text' 
+          placeholder="지원자가 질문에 대한 답변을 적는 공간입니다." readonly="readonly"></input>
         
           <p class="club_new_subtitle">질문 항목</p>
-            <div class="question_wrap">
-              <input name='input_question1' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.'></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
+            <% for i in 1..10 %>
+              <div class="question_wrap">
+                <input class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.'>
+                <textarea class="input_ver1-1" placeholder="지원자가 질문에 대한 답변을 적는 공간입니다." readonly="readonly"></textarea>
               </div>
-            </div>
-            <div class="question_wrap">
-              <input name='input_question2' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.' ></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
-              </div>
-            </div>
-            <div class="question_wrap">
-              <input name='input_question3' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.' ></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
-              </div>
-            </div>
-            <div class="question_wrap">
-              <input name='input_question4' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.' ></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
-              </div>
-            </div>
-            <div class="question_wrap">
-              <input name='input_question5' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.' ></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
-              </div>
-            </div>
-            <div class="question_wrap">
-              <input name='input_question6' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.' ></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
-              </div>
-            </div>
-            <div class="question_wrap">
-              <input name='input_question7' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.' ></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
-              </div>
-            </div>
-            <div class="question_wrap">
-              <input name='input_question8' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.' ></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
-              </div>
-            </div>
-            <div class="question_wrap">
-              <input name='input_question9' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.' ></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
-              </div>
-            </div>
-            <div class="question_wrap">
-              <input name='input_question10' class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.'></input> 
-              <div class="input_ver1 input_ver1-1">
-                지원자가 질문에 대한 답변을 적는 공간입니다.
-              </div>
-            </div>
+            <% end %>
+
             
             <i class="far fa-trash-alt fa-lg question_trash"></i>
             <div class="question_plus">

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # Update
   get '/study/:id/edit' => 'notes#edit_study'  
-  patch '/study/:id' => 'notes#update' 
+  patch '/study/:id' => 'notes#update'
     
   # Destroy
   delete '/study/:id' => 'notes#destroy'
@@ -26,15 +26,23 @@ Rails.application.routes.draw do
   get '/club/:id' => 'notes#show_club'  
   
   # Update
-  get '/club/:id/edit' => 'notes#edit_club' 
+  get '/club/:id/edit' => 'notes#edit_club'
   patch '/club/:id' => 'notes#update' 
     
   # Destroy
   delete '/club/:id' => 'notes#destroy' 
   
+
+  
   #### site
   get '/club_content' => 'sites#club_content'
   get '/competition' => 'sites#competition'
+  
+  
+  #### club_apply
+  get '/club/:id/apply/new' => 'club#new_apply'
+  post '/club/:id/apply' => 'club#create'
+  
   
   #### Comment
   # Create

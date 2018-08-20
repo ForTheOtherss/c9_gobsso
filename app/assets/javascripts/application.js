@@ -60,20 +60,19 @@ $(function(){
   var i = 1;
   $('.question_plus').click(function(){
     $('.question_wrap').eq(i).show();
-    $('.question_wrap').eq(i).attr('name', 'input_question' + i);
+    $('.question_wrap input').eq(i).attr('name', 'input_question' + i);
+    $('.question_wrap textarea').eq(i).attr('name', 'input_answer' + i);
     i++;
   });
   $('.question_trash').click(function(){
     i--;
     $('.question_wrap').eq(i).hide();
-    $('.question_wrap').eq(i).removeAttr('name');
+    $('.question_wrap input').eq(i).removeAttr('name');
+    $('.question_wrap textarea').eq(i).removeAttr('name');
   });
 });
 
 $(function(){
-  // if ($("input:checkbox[name='always_apply']").is(":checked")){
-  //   $('.datetime_wrap').hide();
-  // };
   $(".always_apply_checkbox").change(function(){
         if($(".always_apply_checkbox").is(":checked")){
             $('.datetime_wrap').hide();

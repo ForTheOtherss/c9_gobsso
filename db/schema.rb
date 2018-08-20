@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20180817113637) do
     t.text     "question8"
     t.text     "question9"
     t.text     "question10"
+    t.text     "answer1"
+    t.text     "answer2"
+    t.text     "answer3"
+    t.text     "answer4"
+    t.text     "answer5"
+    t.text     "answer6"
+    t.text     "answer7"
+    t.text     "answer8"
+    t.text     "answer9"
+    t.text     "answer10"
     t.integer  "note_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

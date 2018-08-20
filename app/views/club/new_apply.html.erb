@@ -1,0 +1,48 @@
+  <!-- Container -->
+  <div>검색창(Gem 이용)</div>
+  <br><br>
+  <div class="club_menu">
+    <ul>
+      <li><a href="#" class="club_menu_click">전체</a></li>
+      <li><a href="#">문화/예술/공연</a></li>
+      <li><a href="#">봉사/사회활동</a></li>
+      <li><a href="#">학술/교양</a></li>
+      <li><a href="#">기타</a></li>
+    </ul>
+  </div>
+  <div>
+    <hr class="club_hr border-color2">
+  </div>
+  
+  <!--동아리 지원서 작성-->
+  <div id=club-new-apply class="club_new_wrap">
+      <form action='#' method='post'> 
+      <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
+      <input name='id' type='hidden' value="<%= @club.id %>">
+  
+        <div class="club_new_container">
+        <h1 class="club_new_title">지원서 양식</h1>
+        <div class="club_new_content">
+          <p class="club_new_notice">* 별표 표시는 필수 항목입니다.</p>
+          <p class="club_new_subtitle">전화번호 혹은 카카오톡ID</p>
+          <input name='input_contact' class='input_ver1' size="89" type='text' 
+          placeholder="지원자가 질문에 대한 답변을 적는 공간입니다." required></input>
+        
+          <p class="club_new_subtitle">질문 항목</p>
+            <% for i in 1..10 %>
+              <% question_name = 'question' + i.to_s %>
+              <% if @club.send(question_name) != nil %>
+              <div>
+                <input name='input_question{i}' value="<%= @club.send(question_name) %>" readonly="readonly" class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.'>
+                <textarea name='input_answer{i}' class="input_ver1-2" placeholder="지원자가 질문에 대한 답변을 적는 공간입니다."></textarea>
+              </div>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
+      <div class="apply_submit_wrap s-horizon_wrap">
+        <input type='submit' value='제출' class="apply_submit apply_submit1 s-horizon"></input>
+        <a href="/club" class="apply_submit apply_submit2 s-horizon">취소</a>
+      </div>
+    </form>
+</div>
