@@ -26,7 +26,6 @@ class SitesController < ApplicationController
     end
     
     def study
-        
         @notes = Note.where(mainCategory: 'study').order("created_at DESC").page(params[:page])
     end
     

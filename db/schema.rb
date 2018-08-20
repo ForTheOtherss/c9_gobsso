@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180817113637) do
+ActiveRecord::Schema.define(version: 20180820072614) do
+
+  create_table "applies", force: :cascade do |t|
+    t.string   "contact"
+    t.text     "answer1"
+    t.text     "answer2"
+    t.text     "answer3"
+    t.text     "answer4"
+    t.text     "answer5"
+    t.text     "answer6"
+    t.text     "answer7"
+    t.text     "answer8"
+    t.text     "answer9"
+    t.text     "answer10"
+    t.integer  "club_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clubs", force: :cascade do |t|
     t.text     "title"
@@ -23,7 +40,6 @@ ActiveRecord::Schema.define(version: 20180817113637) do
     t.string   "always_apply"
     t.datetime "recruit_start"
     t.datetime "recruit_end"
-    t.string   "contact"
     t.text     "question1"
     t.text     "question2"
     t.text     "question3"
@@ -34,16 +50,6 @@ ActiveRecord::Schema.define(version: 20180817113637) do
     t.text     "question8"
     t.text     "question9"
     t.text     "question10"
-    t.text     "answer1"
-    t.text     "answer2"
-    t.text     "answer3"
-    t.text     "answer4"
-    t.text     "answer5"
-    t.text     "answer6"
-    t.text     "answer7"
-    t.text     "answer8"
-    t.text     "answer9"
-    t.text     "answer10"
     t.integer  "note_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -55,6 +61,33 @@ ActiveRecord::Schema.define(version: 20180817113637) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "impressions", force: :cascade do |t|
+    t.string   "impressionable_type"
+    t.integer  "impressionable_id"
+    t.integer  "user_id"
+    t.string   "controller_name"
+    t.string   "action_name"
+    t.string   "view_name"
+    t.string   "request_hash"
+    t.string   "ip_address"
+    t.string   "session_hash"
+    t.text     "message"
+    t.text     "referrer"
+    t.text     "params"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index"
+  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
+  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
+  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
+  add_index "impressions", ["impressionable_type", "impressionable_id", "params"], name: "poly_params_request_index"
+  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
+  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
+  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
+  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
 
   create_table "notes", force: :cascade do |t|
     t.string   "title"

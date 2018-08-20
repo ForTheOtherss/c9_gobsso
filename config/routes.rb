@@ -32,16 +32,18 @@ Rails.application.routes.draw do
   # Destroy
   delete '/club/:id' => 'notes#destroy' 
   
-
+  #### Apply
+  # new, create
+  get '/club/:id/apply/new' => 'applies#new_apply'
+  post '/club/:id/apply' => 'applies#create'
+  
+  #show
+  get 'club/:id/apply' => 'applies#show_apply'
   
   #### site
   get '/club_content' => 'sites#club_content'
   get '/competition' => 'sites#competition'
   
-  
-  #### club_apply
-  get '/club/:id/apply/new' => 'club#new_apply'
-  post '/club/:id/apply' => 'club#create'
   
   
   #### Comment
@@ -56,6 +58,7 @@ Rails.application.routes.draw do
   get '/mypage/info' => 'mypage#info'
   get '/mypage/notes_list' => 'mypage#notes_list'
 
+  
   ### 메인 페이지
   root to: 'sites#index'
 end

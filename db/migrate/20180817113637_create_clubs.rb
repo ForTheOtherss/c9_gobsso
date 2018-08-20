@@ -12,7 +12,6 @@ class CreateClubs < ActiveRecord::Migration
       t.datetime :recruit_start
       t.datetime :recruit_end
       
-      t.string :contact
       t.text :question1
       t.text :question2
       t.text :question3
@@ -23,20 +22,6 @@ class CreateClubs < ActiveRecord::Migration
       t.text :question8
       t.text :question9
       t.text :question10
-      
-      t.text :answer1
-      t.text :answer2
-      t.text :answer3
-      t.text :answer4
-      t.text :answer5
-      t.text :answer6
-      t.text :answer7
-      t.text :answer8
-      t.text :answer9
-      t.text :answer10
-      
-      
-      
       
       t.belongs_to :note, foreign_key: true
       
