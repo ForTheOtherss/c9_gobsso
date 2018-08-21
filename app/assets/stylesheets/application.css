@@ -106,6 +106,12 @@ body, dd{
   width: 580px;
 }
 
+#club_container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 
 /* div들 가로로 정렬 */
@@ -704,6 +710,7 @@ body, dd{
   padding: 10px;
   margin-right: -1px;
   height: 258px;
+
 }
 
 .img_poster {
@@ -713,13 +720,14 @@ body, dd{
 
 .club_poster_info {
   float: left;
-  width: 540px;
+  width: 555px;
   border: 1px solid;
   padding: 20px;
   position: relative;
   margin-top: 18px;
   height: 238px;
   margin-bottom: 30px;
+  /*box-sizing: border-box;*/
 }
 
 .club_poster_info h1 {
@@ -730,22 +738,11 @@ body, dd{
 
 .club_dday_label {
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 500;
   vertical-align: middle;
-  border-radius: 7px;
-  padding: 4px 7px 4px 7px;
+  border-radius: 10px;
+  padding: 0 7px;
 }
-
-.sharing_label i {
-  color: gray;
-  margin-right: 3px;
-}
-
-.heart_label i {
-  color: red;
-  margin-right: 3px;
-}
-
 
 .club_label_wrap1 {
   float: right;
@@ -755,53 +752,49 @@ body, dd{
   text-decoration: none;
 }
 
-.sharing_label:hover i {
-  color: black;
+.fa-thumbs-up {
+  color: lightblue;
+  margin-right: 3px;
 }
 
-.sharing_label:hover a {
-  font-weight: bold;
+.fa-thumbs-down {
+  color: red;
+  margin-right: 3px;
 }
 
-.heart_label:hover i {
-  font-weight: bold;
+.fa-star {
+  color: rgb(253, 222, 9);
+  margin-right: 3px;
+  margin-left: 20px;
+  font-size: 17px;
 }
 
-.heart_label:hover a {
-  font-weight: bold;
-}
-
-.sharing_label, .heart_label {
+.icon_wrap {
   font-size: 13px;
   font-weight: normal;
   margin-right: 5px;
 }
 
-.info_content1 {
-  float: left;
-  width: 40%;
-}
-
-.info_content2 {
-  float: left;
-  width: 60%;
-}
-
-.info_content_wrap:after {
-  content:"";
-  display: block;
-  clear: both;
-}
-
-.info_content_wrap h2 {
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 7px;
-}
-
-.info_content_wrap p {
+.club_content_main p {
   font-size: 14px;
-  margin: 0;
+  color: rgb(50, 50, 50);
+  margin: 10px 0;
+}
+
+.club_content_main span {
+  color: black;
+  border: 1px solid black;
+  font-size: 13px;
+}
+
+.club_subtitle {
+  font-size: 15px;
+}
+
+.club_field {
+  font-size: 13.5px;
+  color: rgb(130, 130, 130);
+  font-weight: 400;
 }
 
 .poster_submit {
@@ -856,14 +849,42 @@ body, dd{
 }
 
 .poster_details {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 35px;
+  padding-right: 35px;
   padding-top: 10px;
 }
 
 .poster_details h1 {
   font-size: 18px;
 }
+
+.club_content_table {
+  border-collapse: collapse;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.club_content_table td {
+  border: 1px solid black;
+}
+
+.club_content_table td:nth-child(1){
+  width: 100px;
+  height: 200px;
+  text-align: center;
+  background-color: rgb(248, 248, 248);
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.club_content_table td:nth-child(2){
+  width: 620px;
+  vertical-align: text-top;
+  padding: 10px;
+}
+
 
 .poster_details p {
   font-size: 12px;
@@ -1499,6 +1520,7 @@ body, dd{
 .club_new_container {
   border: 1px solid rgb(220, 220, 220);
   padding: 15px 20px 15px 20px;
+  margin-bottom: 20px;
 }
 
 .club_new_title {

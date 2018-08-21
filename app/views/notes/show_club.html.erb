@@ -14,122 +14,166 @@
     <hr class="club_hr border-color2">
   </div>
 
-
-  <div class="club_content1 l-fixed">
-    <!-- 포스터  -->
-    <div class="club_poster border-color1">
-      <img src="/assets/1.jpg" alt="a" class="img_poster">
-    </div>
-
-    <!-- 랭킹 -->
-    <div class="club_poster_info border-color1">
-      <h1>
-        <%= @note.title %>
-        <span class="club_dday_label bg-color2">D-20</span>
-        <span class="club_label_wrap1">
-          <span class="sharing_label">
-            <a href="#">
-              <i class="fas fa-share-alt"></i> 공유
-            </a>
+  <div id="club_container">
+    <div class="club_content1">
+      <!-- 포스터  -->
+      <div class="club_poster border-color1">
+        <img src="/assets/1.jpg" alt="a" class="img_poster">
+      </div>
+  
+      <!-- 랭킹 -->
+      <div class="club_poster_info border-color1">
+        <h1>
+          <%= @note.club.title %>
+          <span class="club_field">
+            <% if @note.club.field == 1 %>
+            문화/예술/공연
+            <% end %>
           </span>
-
-          <span class="heart_label">
-            <a href="#">
-              <i class="far fa-heart"></i> 232
-            </a>
+          <span class="club_dday_label bg-color2">
+            <% if (@note.club.recruit_end - Time.zone.now)/(60*60*24) < 0  %>
+              마감
+            <% elsif ((@note.club.recruit_end - Time.zone.now)/(60*60*24)).to_i == 0 %>
+              D-day
+            <% else %>
+              D-<%= ((@note.club.recruit_end - Time.zone.now)/(60*60*24)).to_i %>
+            <% end %>
           </span>
-
-        </span>
-
-
-      </h1>
-      <hr>
-      <div class="info_content_wrap">
-        <div class="info_content1">
-          <h2>지원 자격</h2>
+          <span class="club_label_wrap1">
+            <span class="icon_wrap">
+              <a href="#">
+                <i class="far fa-thumbs-up"></i> 11
+              </a>
+            </span>
+            <span class="icon_wrap">
+              <a href="#">
+                <i class="far fa-thumbs-down"></i> 2
+              </a>
+            </span>
+            <span class="icon_wrap">
+              <a href="#">
+                <i class="fas fa-star"></i>
+              </a>
+            </span>
+          </span>
+        </h1>
+        
+        
+        <hr>
+        <div class="club_content_main">
+          <p class="club_subtitle"><%= @note.club.subtitle %></p>
           <p>
-            학년: 1,2,3 학년<br>
-            학과: 상관없음
+            <span>모집기간</span>
+            <%= @note.club.recruit_start.strftime('%Y.%m.%d') %> ~ <%= @note.club.recruit_end.strftime('%Y.%m.%d') %>
+          </p>
+          <p>
+            <span>동아리 유형</span>
+            <% if @note.club.official == 1 %>
+            중앙 동아리
+            <% elsif @note.club.official == 2 %>
+            비공식 동아리
+            <% else @note.club.official == 3 %>
+            소모임
+            <% end %>
+          </p>
+          <p>
+            <span>동아리방</span>
+            <%= @note.club.room %>
+          </p>
+          <p>
+            <span>연락처</span>
+            
           </p>
         </div>
-        <div class="info_content2">
-          <h2>모집 기간</h2>
-          <p>
-            서류: 18.07.11~18.07.15<br>
-            면접: 18.07.17~18.07.19<br>
-            발표: 18.07.22
-          </p>
+        <div class="poster_submit_position">
+          <a href='/club/<%= @note.id %>/edit' class="poster_submit bg-color1"> 
+            수정 
+          </a>
+          <a href='/club/<%= @note.id %>' data-method='delete' class="poster_submit bg-color1"> 
+            삭제
+          </a>
+          <a href='/club/<%= @note.id %>/apply/new' class="poster_submit bg-color1">
+              동아리 지원
+          </a>
+          <a href='/club/<%= @note.id %>/apply' class="poster_submit bg-color1">
+              지원자 보기
+          </a>
         </div>
+        <br>
       </div>
-      <div class="poster_submit_position">
-        <a href='/club/<%= @note.id %>/edit' class="poster_submit bg-color1"> 
-          수정 
-        </a>
-        <a href='/club/<%= @note.id %>' data-method='delete' class="poster_submit bg-color1"> 
-          삭제
-        </a>
-        <a href='/club/<%= @note.id %>/apply/new' class="poster_submit bg-color1">
-            동아리 지원
-        </a>
-        <a href='/club/<%= @note.id %>/apply' class="poster_submit bg-color1">
-            지원자 보기
-        </a>
-      </div>
-      <br>
     </div>
-  </div>
-
-<!-- 동아리 상세정보 -->
-  <div class="poster_details_wrap border-color1 l-fixed tabSet">
-    <div class="poster_menu">
-      <ul class="tabs">
-        <li><a href="#panel1-1" class="on">상세정보</a></li>
-        <li><a href="#panel1-2">활동사진</a></li>
-        <li><a href="#panel1-3">Q&A</a></li>
-      </ul>
-    </div>
-    <div class="poster_details panel" id="panel1-1">
-      <h1>상세 정보</h1>
-      <p><%#= @note.content %></p>
-    </div>
-    <div class="poster_details panel" id="panel1-2">
-      <h1>활동 사진</h1>
-      <p><%#= @note.content %></p>
-    </div>
-    <div class="poster_details panel" id="panel1-3">
-      <h1>Q&A</h1>
-      <p><%#= @note.content %></p>
-    </div>
-  </div>
-
-<!-- 댓글 -->
-<form action = '/comments' method='post'>
-  <input type='hidden' name='authenticity_token' value=<%= form_authenticity_token %>></input>
-  <input type='hidden' name='note_id' value=<%= @note.id %>></input>
   
-  
-  <div class="comment_wrap bg-color2 l-fixed">
-    <!--<input type='submit' value ="댓글 쓰기" class="writing_comment_btn"></input>-->
-    <span class="writing_comment_btn">댓글창</span>
-    <div class="comment_content">
-      <div class="inner_comment_wrap bg-color2">
-        <input type='text' name='input_content' class="inner_comment_content" placeholder="댓글을 입력하세요.">
-        <button type="submit" class="inner_comment_btn">
-        <i class="fas fa-paper-plane"></i>
-        </button>
+  <!-- 동아리 상세정보 -->
+    <div class="poster_details_wrap border-color1 tabSet">
+      <div class="poster_menu">
+        <ul class="tabs">
+          <li><a href="#panel1-1" class="on">상세정보</a></li>
+          <li><a href="#panel1-2">활동사진</a></li>
+          <!--<li><a href="#panel1-3">Q&A</a></li>-->
+        </ul>
       </div>
-        <!--<div class="arrow_label">&#10551;</div>-->
+      <div class="poster_details panel" id="panel1-1">
+        <h1><%= @note.title %></h1>
+        <p><%= @note.club.subtitle %></p>
+        
+        
+        <table class="club_content_table">
+          <tr>
+            <td>모집일정</td>
+            <td><%= @note.content1 %>
+            </td> 
+          </tr>
+          <tr>
+            <td>지원자격</td>
+            <td><%= @note.content2 %></td> 
+          </tr>
+          <tr>
+            <td>활동내용</td>
+            <td><%= @note.content3 %></td> 
+          </tr>
+        </table>
+        
+        
+      </div>
+      <div class="poster_details panel" id="panel1-2">
+        <h1>활동 사진</h1>
+        <p><%#= @note.content %></p>
+      </div>
+      <!--<div class="poster_details panel" id="panel1-3">-->
+      <!--  <h1>Q&A</h1>-->
+      <!--  <p></p>-->
+      <!--</div>-->
     </div>
-
+  
+  <!-- 댓글 -->
+  <form action = '/comments' method='post'>
+    <input type='hidden' name='authenticity_token' value=<%= form_authenticity_token %>></input>
+    <input type='hidden' name='note_id' value=<%= @note.id %>></input>
     
-    <% @note.comments.reverse_each do |comment| %>
+    
+    <div class="comment_wrap bg-color2">
+      <!--<input type='submit' value ="댓글 쓰기" class="writing_comment_btn"></input>-->
+      <span class="writing_comment_btn">댓글창</span>
       <div class="comment_content">
-        <h1><%= comment.content %></h1>
-          <span class="comment_content_date">07/08 17:44</span> 
-          <span><a href='/comments/<%= comment.id %>'
-          data-confirm='댓글을 삭제합니다.' data-method='delete'> 삭제</a></span>
+        <div class="inner_comment_wrap bg-color2">
+          <input type='text' name='input_content' class="inner_comment_content" placeholder="댓글을 입력하세요.">
+          <button type="submit" class="inner_comment_btn">
+          <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
           <!--<div class="arrow_label">&#10551;</div>-->
       </div>
-    <% end %>
-  </div>
-</form>
+  
+      
+      <% @note.comments.reverse_each do |comment| %>
+        <div class="comment_content">
+          <h1><%= comment.content %></h1>
+            <span class="comment_content_date">07/08 17:44</span> 
+            <span><a href='/comments/<%= comment.id %>'
+            data-confirm='댓글을 삭제합니다.' data-method='delete'> 삭제</a></span>
+            <!--<div class="arrow_label">&#10551;</div>-->
+        </div>
+      <% end %>
+    </div>
+  </form>
+</div>
