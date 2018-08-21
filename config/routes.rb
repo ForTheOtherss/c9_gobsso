@@ -58,6 +58,9 @@ Rails.application.routes.draw do
 
   #### MyPage
   get '/mypage/info' => 'mypage#info'
+  get '/mypage/info/check_password' => 'mypage#info2'
+  get '/mypage/info/change' => 'mypage#info3'
+  get '/mypage/info/complete' => 'mypage#info4'
   get '/mypage/notes_list' => 'mypage#notes_list'
 
   

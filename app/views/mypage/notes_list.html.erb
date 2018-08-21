@@ -9,19 +9,19 @@
         
         <h2>동아리</h2>
           <table class="club_board border-color2">
-            <% @club.each do |club| %>
+            <% @notes.each do |note| %>
               <tbody>
                 <tr class="club-table-line">
                   <td>
                     <img src="/assets/1.jpg" alt="a" class="img-board s-horizon">
-                    <a href='/club/<%= club.id %>'>
+                    <a href='/club/<%= note.id %>'>
                       <div class="s-horizon">
                         <h1 class="club-title-text black2">
-                          <%= club.title %>
-                          <% if club.check1 == "on" %>
+                          <%= note.title %>
+                          <% if note.club.official == 1 %>
                             <span class="club_category bg-color1">공식 동아리</span>
                           <% end %>
-                          <% if club.check2 == "on" %>
+                          <% if note.club.room == 1 %>
                             <span class="club_category club_category_2">동방</span>
                           <% end %>
                           <span class="club_category club_category_3">마감</span>

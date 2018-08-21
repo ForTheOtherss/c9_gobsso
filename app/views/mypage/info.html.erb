@@ -14,11 +14,15 @@
                     <span class="info_content"><%= current_user.name %></span>
                 </p>
                 <p>
-                    <span class="info_subtitle">아이디</span>
+                    <span class="info_subtitle">학번</span>
                     <span class="info_content">ㅁㅁㅁ</span>
                 </p>
                 <p>
-                    <span class="info_subtitle">닉네임</span>
+                    <span class="info_subtitle">학과</span>
+                    <span class="info_content">ㅁㅁㅁ</span>
+                </p>
+                <p>
+                    <span class="info_subtitle">학교</span>
                     <span class="info_content">ㅁㅁㅁ</span>
                 </p>
                 <p>
@@ -26,15 +30,15 @@
                     <span class="info_content"><%= current_user.email %></span>
                 </p>
                 <p>
-                    <span class="info_subtitle">학과</span>
+                    <span class="info_subtitle">생년월일</span>
                     <span class="info_content">ㅁㅁㅁ</span>
                 </p>
             </div>
         </div>
         <hr class="info_line"></hr>
         <div class="mypage_btn_wrap">
-            <span class="mypage_btn1">수정</span>
-            <span class="mypage_btn1">비밀번호 변경</span>
+            <!--<span class="mypage_btn1">수정</span>-->
+            <a href="/mypage/info/check_password" class="mypage_btn1">비밀번호 변경</a>
         </div>
     </div>
 </div>

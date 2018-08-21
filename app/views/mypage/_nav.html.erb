@@ -2,14 +2,16 @@
     <div class="mypage-nav-content">
         <h1>계정</h1>
         <ul>
-            <a href='/mypage/info'><li class="mypage-list, <%= @mypage == '/mypage/info' ? 'mypage-list-current color1' : 'mypage-list' %>">내 정보 관리</li></a>
+            <% info = @mypage.include?"/mypage/info" %>
+            <a href='/mypage/info'><li class="mypage-list, <%= info ? 'mypage-list-current color1' : 'mypage-list' %>">내 정보 관리</li></a>
             <a href='#'><li class="mypage-list, <%= @mypage == '#' ? 'mypage-list-current color1' : 'mypage-list' %>">회원 탈퇴</li></a>
         </ul>
     </div>
     <div class="mypage-nav-content">
         <h1>활동</h1>
         <ul>
-            <a href='/mypage/notes_list'><li class="mypage-list, <%= @mypage == '/mypage/notes_list' ? 'mypage-list-current color1' : 'mypage-list' %>">게시물 관리</li></a>
+            <% notes_list = @mypage.include?"/mypage/notes_list" %>
+            <a href='/mypage/notes_list'><li class="mypage-list, <%= notes_list ? 'mypage-list-current color1' : 'mypage-list' %>">게시물 관리</li></a>
             <a href='#'><li class="mypage-list, <%= @mypage == '#' ? 'mypage-list-current color1' : 'mypage-list' %>">ㅂㅂㅂㅂㅂ</li></a>
         </ul>
     </div>
