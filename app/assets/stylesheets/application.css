@@ -217,6 +217,7 @@ body, dd, input {
   font-weight: 500;
   padding-bottom: 15px;
   border-bottom: 2px solid rgb(231, 231, 231);
+  margin-bottom: -2px;
 }
 
 .header2_gnb a:hover {
@@ -236,7 +237,6 @@ body, dd, input {
 
 
 /* lnb_nav 메뉴 */
-
 .lnb_wrap {
 }
 
@@ -266,8 +266,8 @@ body, dd, input {
   border-bottom: 3px solid;
   border-left: 3px solid;
   border-right: 3px solid;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   border-color: white;
   margin-left: -3px;
 }
@@ -1378,17 +1378,46 @@ body, dd, input {
 .info_subtitle {
   display: inline-block;
   text-align: right;
-  width: 50px;
+  width: 60px;
   font-weight: 500;
 }
+
+
+
 
 .info_content {
   color: rgb(150, 150, 150);
   margin-left: 20px;
 }
 
+.info_subtitle2 {
+  display: inline-block;
+  text-align: right;
+  color: rgb(100, 100, 100);
+  width: 100px;
+  font-weight: 500;
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+.info_content2 {
+  color: rgb(50, 50, 50);
+  font-size: 14px;
+}
+
+.info_input {
+  width: 150px;
+  border: 1px solid rgb(200, 200, 200);
+}
+
+.info_wrap2 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
 .info_line {
-  color: rgb(180, 180, 180);
+  border: 1px solid rgb(230, 230, 230);
 }
 
 .mypage_btn1 {
@@ -1399,6 +1428,7 @@ body, dd, input {
   font-size: 14px;
   font-weight: 300;
   margin-left: 6px;
+  text-decoration: none;
 }
 
 .mypage_btn2 {
@@ -1424,8 +1454,11 @@ body, dd, input {
   text-align: right;
 }
 
-.mypage_btn_wrap2 {
-  /*margin-top: 20px;*/
+#mypage-info h2 {
+  color: rgb(100, 100, 100);
+  font-size: 19px;
+  font-weight: 500;
+  margin-top: -13px;
 }
 
 .club-etc-text .mypage_applicants {
@@ -1703,4 +1736,19 @@ body, dd, input {
   right: 7px;
   top: 42px;
   color: rgb(150, 150, 150);
+}
+
+.info_change_complete span {
+  color: rgb(50, 50, 50);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.info_change_complete {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 400;
+  color: rgb(100, 100, 100);
 }
