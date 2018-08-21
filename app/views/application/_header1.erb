@@ -1,25 +1,24 @@
       <div class="lnb_wrap l-fixed">
         <nav class="lnb_nav">
           <ul>
-            <li><a href="<%= study_path %>" class="<%= @study ? @study : 'bg_col_white black3' %>">스터디</a></li>
-            <li><a href="<%= competition_path %>" class="<%= @comp ? @comp : 'bg_col_white black3' %>">공모전</a></li>
-            <li><a href="<%= club_path %>" class="<%= @club ? @club : 'bg_col_white black3' %>">동아리</a></li>
+              <li><div class="lnb_nav1_bg"><a href="<%= study_path %>" class="<%= @study ? @study : 'bg_col_green black2 lnb_nav1' %>">스터디</a></div></li>
+              <li><div class="lnb_nav2_bg"><a href="<%= competition_path %>" class="<%= @comp ? @comp : 'bg_col_green black2 lnb_nav2' %>">공모전</a></div></li>
+              <li><div class="lnb_nav3_bg"><a href="<%= club_path %>" class="<%= @club ? @club : 'bg_col_green black2 lnb_nav3' %>">동아리</a></div></li>
           </ul>
         </nav>
       </div>
-            <div class="gnb_wrap l-fixed mgn-pd_0">
+      <div class="gnb_wrap l-fixed mgn-pd_0">
         <!-- 로고 -->
         <div class="logo logo_position">
-          <h1>
-            <%= link_to 'TeamMate'.html_safe, 
-            root_path, :class => "logo_white" %>
-          </h1>
+            <a href="/">
+              <img src="/assets/header_logo.png" height="58" width="174">
+            </a>
         </div>
         <!-- GNB -->
-        <nav class="gnb_nav gnb_position">
+        <nav class="gnb_nav gnb_position header1_gnb">
           <ul>
           <% if user_signed_in? %>
-            <li><a href="/mypage/info">마이페이지</a></li>
+            <li><a href="/mypage/info" class="header1_effect">마이페이지</a></li>
             <li><%= link_to '로그아웃', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to '공지사항', new_user_registration_path %></li>

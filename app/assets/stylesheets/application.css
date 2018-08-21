@@ -16,10 +16,12 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-body, dd{
+body, dd, input {
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
 }
+
+
 
 .mgn-pd_0 {
   margin: 0;
@@ -110,8 +112,14 @@ body, dd{
   width: 800px;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
+#search_bar_wrap {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 /* div들 가로로 정렬 */
@@ -140,7 +148,7 @@ body, dd{
 }
 
 
-/* Header Type1*/
+/* Header Type1*/R
 .gnb_wrap:after {
   content:"";
   display: block;
@@ -148,7 +156,7 @@ body, dd{
 }
 
 .logo_position {
-  margin-top: -10px;
+  margin-top: -20px;
 }
 .gnb_position {
   margin-top: -5px;
@@ -163,11 +171,6 @@ body, dd{
   /* 로고 */
 .logo h1 a {
   text-decoration: none;
-}
-
-
-.logo_white {
-  color: white;
 }
 
 .logo h1 {
@@ -208,8 +211,20 @@ body, dd{
   text-decoration: none;
 }
 
-.gnb_nav li a:hover {
-  background-color: #eeeeee;
+.header1_gnb a:hover {
+  font-size: 17px;
+  margin-top: 10px;
+  font-weight: 500;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgb(231, 231, 231);
+}
+
+.header2_gnb a:hover {
+  font-size: 17px;
+  margin-top: 9px;
+  font-weight: 500;
+  padding-bottom: 24px;
+  border-bottom: 2px solid rgb(231, 231, 231);
 }
 
 .gnb_nav ul:after {
@@ -221,7 +236,12 @@ body, dd{
 
 
 /* lnb_nav 메뉴 */
+
 .lnb_wrap {
+}
+
+.lnb_nav {
+  border-radius: 3px;
 }
 
 .lnb_nav:after {
@@ -243,7 +263,13 @@ body, dd{
   margin-top: 0;
   font-size: 14px;
   text-decoration: none;
-  border: 1px solid white;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-color: white;
+  margin-left: -3px;
 }
 
 .lnb_nav li a:hover {
@@ -259,6 +285,20 @@ body, dd{
 .lnb_nav li {
   float: right;
   width: auto;
+}
+
+.lnb_nav1_bg {
+  background-color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.lnb_nav2_bg {
+  background-color: white;
+}
+
+.lnb_nav3_bg {
+  background-color: white;
+  border-bottom-left-radius: 5px;
 }
 
 
@@ -289,7 +329,7 @@ body, dd{
 }
 
 .container_nav:hover {
-  border-color: #ACD598;
+  border-color: #AFD79B;
   box-shadow:0px 0px 1px 1px #999;
   background-color: #EEEEEE;
 }
@@ -532,15 +572,19 @@ body, dd{
 
 .club_category {
   color: white;
-  padding: 1px 4px 1px 4px;
-  font-size: 12px;
-  margin: 2px;
+  padding: 0.5px 5px 1px 5px;
+  font-size: 13px;
   font-weight: 400;
+  border-radius: 10px;
 }
 
+.club_category_1 {
+  background-color: #cce198;
+  margin-left: 5px;
+}
 
 .club_category_2 {
-  background-color: #6699ff;
+  background-color: #afcbf9;
 }
 .club_dday_color1 {
   color: rgb(100, 100, 100);
@@ -763,7 +807,7 @@ body, dd{
 }
 
 .fa-star {
-  color: rgb(253, 222, 9);
+  color: #ffea05;
   margin-right: 3px;
   margin-left: 20px;
   font-size: 17px;
@@ -817,7 +861,7 @@ body, dd{
 }
 
 .poster_menu {
-  border-bottom: 1px solid #ACD598;
+  border-bottom: 1px solid #AFD79B;
 }
 
 .poster_menu ul {
@@ -843,7 +887,7 @@ body, dd{
 .poster_menu li {
   float:left;
   width: auto;
-  border-right: 1px solid #ACD598;
+  border-right: 1px solid #AFD79B;
   width: 80px;
   text-align: center;
 }
@@ -897,7 +941,7 @@ body, dd{
 
 .tabs a {
   display: none;
-  border-bottom: 1px solid #ACD598;
+  border-bottom: 1px solid #AFD79B;
 }
 
 .tabs .on {
@@ -1190,22 +1234,29 @@ body, dd{
 
 .favorite-star {
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  font-size: 16px;
+  bottom: 10px;
+  right: 2px;
+  font-size: 14px;
 }
 
 .board-button {
   display: block;
   border: 1px solid;
   text-decoration: none;
-  color: black;
+  color: white;
   text-align: center;
   padding: 5px;
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 1px;
 }
 
+.fa-edit {
+  margin-right: 2px;
+}
+
+.fa-arrow-circle-right {
+  margin-left: 5px;
+}
 
 /*kaminari*/
 .pagination a, .pagination span.current, .pagination span.gap {
@@ -1243,20 +1294,20 @@ body, dd{
 
 .pagination .first a {
   border: none;
-  color: #ACD598;
+  color: #AFD79B;
 }
 
 .pagination .last a{
     border: none;
-    color: #ACD598;
+    color: #AFD79B;
 }
 .pagination .prev a {
     border: none;
-    color: #ACD598;
+    color: #AFD79B;
 }
 .pagination .next a {
     border: none;
-    color: #ACD598;
+    color: #AFD79B;
 }
 .page {
     padding : 0;
@@ -1265,7 +1316,7 @@ body, dd{
 }
 
 .pagination span.current {
-  background-color: #ACD598;
+  background-color: #AFD79B;
   color: white;
 }
 
@@ -1620,3 +1671,36 @@ body, dd{
 
 
 
+.search_bar {
+  width: 480px;
+  background-color: rgb(245, 245, 245);
+  padding: 2px 8px 4px 15px;
+  border-radius: 30px;
+  border: none;
+  height: 40px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.search_bar::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(150, 150, 150);
+}
+
+.search_bar:focus {
+  outline: none;
+}
+
+.search_position {
+  position: relative;
+}
+.fa-search {
+  position: absolute;
+  right: 7px;
+  top: 42px;
+  color: rgb(150, 150, 150);
+}

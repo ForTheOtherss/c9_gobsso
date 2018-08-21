@@ -1,14 +1,14 @@
 @charset "UTF-8";
 .color1 {
-    color: #ACD598;
+    color: #AFD79B;
 }
 
 .border-color1 {
-    border-color: #ACD598;
+    border-color: #AFD79B;
 }
 
 .bg-color1 {
-    background-color: #ACD598;
+    background-color: #AFD79B;
 }
 
 
@@ -34,4 +34,8 @@
 
 .black3 {
     color: rgb(100, 100, 100);
+}
+
+.white {
+    color: white;
 }
