@@ -5,15 +5,15 @@ class SitesController < ApplicationController
     
     
     def lnb_class1
-        @study = 'bg-color1 black3'
+        @study = 'bg-color1 white'
     end
     
     def lnb_class2
-        @comp = 'bg-color1 black3'
+        @comp = 'bg-color1 white'
     end
     
     def lnb_class3
-        @club = 'bg-color1 black3'
+        @club = 'bg-color1 white'
     end
     
     

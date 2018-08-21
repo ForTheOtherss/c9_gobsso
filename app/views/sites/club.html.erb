@@ -3,10 +3,9 @@
   <link rel="stylesheet" href="/assets/jquery.bxslider.css">
   <script src="/assets/jquery.bxslider.min.js"></script>
 <% end %>
-
-
-    <div>검색창(Gem 이용)</div>
-    <br><br>
+    
+    <%= render "application/search_bar" %>
+    
     <div class="club_menu">
       <ul>
         <li><a href="#" class="club_menu_click">전체</a></li>
@@ -98,7 +97,7 @@
                         <h1 class="club-title-text black2">
                           <%= n.title %>
                           <% if n.club.official == 1 %>
-                            <span class="club_category bg-color1">공식 동아리</span>
+                            <span class="club_category club_category_1">공식 동아리</span>
                           <% end %>
                           <% if n.club.room == 1 %>
                             <span class="club_category club_category_2">동방</span>

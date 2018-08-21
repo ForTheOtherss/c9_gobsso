@@ -2,12 +2,13 @@
         <!-- 로고 -->
         <div class="logo">
           <h1>
-            <%= link_to 'TeamMate'.html_safe, 
-            root_path, :class => "logo_white" %>
+            <a href="/">
+              <img src="/assets/header_logo.png" height="58" width="174" style="margin-top: -7px;">
+            </a>
           </h1>
         </div>
         <!-- GNB -->
-        <nav class="gnb_nav">
+        <nav class="gnb_nav header2_gnb">
           <ul>
           <% if user_signed_in? %>
             <li><a href="/mypage/info">마이페이지</a></li>
