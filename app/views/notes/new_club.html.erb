@@ -26,9 +26,9 @@
         <div class="club_new_content">
           <p class="club_new_notice">* 별표 표시는 필수 항목입니다.</p>
           <p class="club_new_subtitle">기본 정보*</p>
-          <input class="input_ver1" size="38" name='club_title' type='text' placeholder='동아리 이름 *' required></input><br>
+          <input class="input_ver1" size="38" name='club_title' type='text' placeholder='동아리 이름 *' required autocomplete="off"></input><br>
           <사진 첨부 기능><br>
-          <input class="input_ver1" size="89" name='club_subtitle' type='text' placeholder="동아리 한 줄 소개 *" required></input>
+          <input class="input_ver1" size="89" name='club_subtitle' type='text' placeholder="동아리 한 줄 소개 *" required autocomplete="off"></input>
           
           <p class="club_new_subtitle">분야*</p>
           <div class="club_new_radiobox">
@@ -69,7 +69,7 @@
         <div class="club_new_content">
           <p class="club_new_notice">* 별표 표시는 필수 항목입니다.</p>
           <p class="club_new_subtitle">글 제목*</p>
-          <input name='input_title' class='input_ver1' size="89" type='text' placeholder='제목 *' required></input>
+          <input name='input_title' class='input_ver1' size="89" type='text' placeholder='제목 *' required autocomplete="off"></input>
           
           <p class="club_new_subtitle">모집 기간*<br>
           (상시 모집<input type='checkbox' name='always_apply' class="always_apply_checkbox">)</p>
@@ -82,9 +82,9 @@
                  min="<%= Time.zone.now.strftime('%Y-%m-%dT%H:%M') %>"> 까지
             </div>
           <p class="club_new_subtitle">상세 모집 일정</p>
-            <textarea name='input_content1' class='input_ver1' cols=93 rows=6 placeholder="※동아리 별도의 면접 일정이 있다면 적어주세요." required ></textarea>
+            <textarea name='input_content1' class='input_ver1' cols=93 rows=6 placeholder="※동아리 별도의 면접 일정이 있다면 적어주세요." required autocomplete="off"></textarea>
           <p class="club_new_subtitle">지원자격*</p>
-            <textarea name='input_content2' class='input_ver1' cols=93 rows=6 placeholder="※동아리 지원 자격을 구체적으로 적어주세요." required ></textarea>
+            <textarea name='input_content2' class='input_ver1' cols=93 rows=6 placeholder="※동아리 지원 자격을 구체적으로 적어주세요." required autocomplete="off"></textarea>
           
           <p class="club_new_subtitle">상세 내용*</p>
             <textarea name='input_content3' class='input_ver1' cols=93 rows=10 placeholder="※활동 내용, 모임 시간 및 장소, 모집 대상, 지원 방법, 연락처 등 상세 내용을 자유롭게 적어주세요." required ></textarea>
@@ -104,7 +104,7 @@
           <p class="club_new_subtitle">질문 항목</p>
             <% for i in 1..10 %>
               <div class="question_wrap">
-                <input class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.'>
+                <input class='input_ver2 question_title' size="89" type='text' placeholder='질문을 입력하세요.' >
                 <textarea class="input_ver1-1" placeholder="지원자가 질문에 대한 답변을 적는 공간입니다." readonly="readonly"></textarea>
               </div>
             <% end %>

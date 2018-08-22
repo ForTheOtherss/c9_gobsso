@@ -121,6 +121,18 @@ body, dd, input {
   margin-right: auto;
 }
 
+#login_wrap {
+  width: 290px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login_insert_info {
+  width: 290px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 /* div들 가로로 정렬 */
 .s-horizon {
@@ -1533,6 +1545,94 @@ body, dd, input {
   outline: none;
 }
 
+.input_ver3 {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border: 1px solid rgb(170, 170, 170);
+  margin-bottom: 5px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+
+.input_ver3:focus {
+  outline: none;
+}
+
+.input_ver3::placeholder {
+  font-size: 14px;
+}
+
+.submit_ver3 {
+  border: none;
+  width: 100%;
+  border-radius: 7px;
+  height: 45px;
+  background-color: #AFD79B;
+  color: white;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.submit_ver3:hover {
+  font-weight: 600;
+}
+
+.submit_ver3:focus {
+  outline: none;
+}
+
+/*.input_ver4_1 {*/
+/*  width: 50%;*/
+/*  height: 30px;*/
+/*  border: none;*/
+/*  border: 1px solid rgb(170, 170, 170);*/
+/*  margin-bottom: 15px;*/
+/*  padding: 0 5px;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+.input_ver4_2 {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border: 1px solid rgb(170, 170, 170);
+  margin-bottom: 10px;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+
+#login_wrap h1 {
+  text-align: center;
+}
+
+.login_subbutton div {
+  width: 50%;
+}
+
+.login_subbutton a {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+.login_subbutton a:hover {
+  font-weight: 600;
+}
+
 .question_wrap {
   display: none;
 }
@@ -1576,7 +1676,6 @@ body, dd, input {
 .apply_submit {
   border: none;
   border-radius: 5px;
-  
   padding: 4px 20px 4px 20px;
   font-size: 15px;
   font-weight: 500;
@@ -1587,7 +1686,7 @@ body, dd, input {
 }
 
 .apply_submit1 {
-  background-color: rgb(137, 201, 151);
+  background-color: #AFD79B;
 }
 
 .apply_submit2 {
@@ -1751,4 +1850,23 @@ body, dd, input {
   font-size: 22px;
   font-weight: 400;
   color: rgb(100, 100, 100);
+}
+
+#login_insert_info h1 {
+  text-align: center;
+}
+
+.login_insert_info_submit {
+  display: block;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 20px 4px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #AFD79B;
 }
