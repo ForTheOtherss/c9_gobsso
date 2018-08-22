@@ -1,15 +1,26 @@
-<h2>Log in</h2>
+<div id="login_wrap">
+<h1>Log in</h1>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <%= f.email_field :email, required: false, autofocus: true, placeholder: '이메일 주소', class: :input_ver3 %><br>
+    <%= f.password_field :password, required: false, placeholder: '비밀번호', class: :input_ver3 %><br>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.submit "로그인", class: :submit_ver3 %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>
+<div class="s-horizon_wrap login_subbutton">
+  <div class="s-horizon">
+    <%= link_to "비밀번호 재설정", new_password_path(resource_name) %>
+  </div>
+  <div class="s-horizon">
+    <%= link_to "회원가입", new_registration_path(resource_name) %>
+  </div>
+</div>
+
+
+</div>

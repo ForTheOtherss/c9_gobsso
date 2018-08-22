@@ -2,7 +2,7 @@ class Note < ActiveRecord::Base
     has_many :comments, :dependent => :destroy
     paginates_per 10
     belongs_to :user
-    has_one :club
+    has_one :club, dependent: :destroy
     
     has_many :impressions, :as=>:impressionable
     def impression_count
