@@ -3,21 +3,7 @@
   <link rel="stylesheet" href="/assets/jquery.bxslider.css">
   <script src="/assets/jquery.bxslider.min.js"></script>
 <% end %>
-    
-    <%= render "application/search_bar" %>
-    
-    <div class="club_menu">
-      <ul>
-        <li><a href="#" class="club_menu_click">전체</a></li>
-        <li><a href="#">문화/예술/공연</a></li>
-        <li><a href="#">봉사/사회활동</a></li>
-        <li><a href="#">학술/교양</a></li>
-        <li><a href="#">기타</a></li>
-      </ul>
-    </div>
-    <div>
-      <hr class="club_hr border-color2">
-    </div>
+  
 
 
   <!--club-container-->
@@ -40,64 +26,44 @@
             <!--    </th>-->
             <!--  </tr>-->
             <!--</thead>-->
+              
 
-            <!--마감 되지 않은 글-->
-            <% @notes.each do |n| %>
-              <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) >= 0 || n.club.always_apply == 'on' %>
-              <tbody>
-                <tr class="club-table-line">
-                  <td>
-                    <a href='/club/<%= n.id %>'>
-                    <img src="/assets/1.jpg" alt="a" class="img-board s-horizon">
-                      <div class="s-horizon club-text-content">
-                        <h1 class="club-title-text black2">
-                          <%= n.title %>
-                          <% if n.club.official == 1 %>
-                            <span class="club_category bg-color1">공식 동아리</span>
-                          <% end %>
-                          <% if n.club.room == 1 %>
-                            <span class="club_category club_category_2">동방</span>
-                          <% end %>
-                          </h1>
-                        <p class="club-subtitle-text black3"><%= n.club.subtitle %></p>
-                      </div>
-                      </a>
-                    <div class="club-etc-text">
-                          <% if (n.club.always_apply == 'on') %>
-                            <p class="color1">상시 모집</p>
-                          <% elsif (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0  %>
-                            <p class='club_dday_color1'>마감</p>
-                          <% elsif ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i == 0 %>
-                            <p class="club_dday_color2">D-day</p>
-                          <% else %>
-                            <p class="color1">D-<%= ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i %></p>
-                          <% end %>
-                        <p><i class="far fa-eye black3"></i> 273</p>
-                        <p><i class="fas fa-thumbs-up"></i> 15 <i class="fas fa-thumbs-down"></i> 2</p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-              <% end %>
-            <% end %>
             
-            <!--마감 된 글-->
-            <% @notes.each do |n| %>
-              <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0 && n.club.always_apply != 'on' %>
+            <% doing_notes = [] %>
+            <% finished_notes = [] %>
+            
+            <% @notes.each do |t| %>
+              <% if (t.club.recruit_end - Time.zone.now)/(60*60*24) >= 0 %>
+                <% doing_notes.push(t) %>
+              <% else %>
+                <% finished_notes.push(t) %>
+              <% end %>
+            <% end %>
+            <% if finished_notes.length == 1 %>
+              <% ordered_notes = doing_notes.push(finished_notes) %>
+            <% elsif finished_notes.length > 1 %>
+              <% ordered_notes = doing_notes.concat(finished_notes) %>
+            <% end %>
+            <% ordered_notes.each do |n| %>  
+              <% doing = (n.club.recruit_end - Time.zone.now)/(60*60*24) >= 0 %>
+              <% finished = (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0 %>
+              <% dday = ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i == 0 %>
+              <% always = n.club.always_apply == 'on' %>
+              <% not_always = n.club.always_apply != 'on' %>
               <tbody>
                 <tr class="club-table-line">
-                  <td 
-                  <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0 %>
-                  class="bg-color2"
+                  <% if finished %>
+                    <td class="bg-color2">
+                  <% else %>
+                    <td>
                   <% end %>
-                  >
                     <a href='/club/<%= n.id %>'>
                     <img src="/assets/1.jpg" alt="a" class="img-board s-horizon">
                       <div class="s-horizon club-text-content">
                         <h1 class="club-title-text black2">
-                          <%= n.title %>
-                          <% if n.club.official == 1 %>
-                            <span class="club_category club_category_1">공식 동아리</span>
+                          <%= n.club.title %>
+                          <% if n.club.official == "중앙 동아리" %>
+                            <span class="club_category club_category_1">중앙 동아리</span>
                           <% end %>
                           <% if n.club.room == 1 %>
                             <span class="club_category club_category_2">동방</span>
@@ -107,23 +73,23 @@
                       </div>
                       </a>
                     <div class="club-etc-text">
-                          <% if (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0  %>
+                          <% if always %>
+                            <p class="color1">상시 모집</p>
+                          <% elsif finished %>
                             <p class='club_dday_color1'>마감</p>
-                          <% elsif ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i == 0 %>
+                          <% elsif dday %>
                             <p class="club_dday_color2">D-day</p>
                           <% else %>
                             <p class="color1">D-<%= ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i %></p>
                           <% end %>
-                        <p><i class="far fa-eye black3"></i> <%= n.unique_impression_count %></p>
+                        <p><i class="far fa-eye black3"></i> <%= n.unique_impression_count %> </p>
                         <p><i class="fas fa-thumbs-up"></i> 15 <i class="fas fa-thumbs-down"></i> 2</p>
                     </div>
                   </td>
                 </tr>
               </tbody>
               <% end %>
-            <% end %>
           </table>
-          
           
 
         <%= paginate @notes %>

@@ -46,7 +46,7 @@ class NotesController < ApplicationController
         c.title = params[:club_title]
         c.subtitle = params[:club_subtitle]
         c.field = params[:input_field]
-        c.official = params[:input_type]
+        c.official = params[:input_official]
         c.room = params[:input_room]
         c.size = params[:input_size]
         c.always_apply = params[:always_apply]

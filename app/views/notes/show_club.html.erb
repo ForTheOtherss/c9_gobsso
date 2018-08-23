@@ -1,19 +1,4 @@
-  <!-- Container -->
-  <%= render "application/search_bar" %>
-  <div class="club_menu">
-    <ul>
-      <li><a href="#" class="club_menu_click">전체</a></li>
-      <li><a href="#">문화/예술/공연</a></li>
-      <li><a href="#">봉사/사회활동</a></li>
-      <li><a href="#">학술/교양</a></li>
-      <li><a href="#">기타</a></li>
-    </ul>
-  </div>
-  <div>
-    <hr class="club_hr border-color2">
-  </div>
-
-  <div id="club_container">
+<div id="club_container">
     <div class="club_content1">
       <!-- 포스터  -->
       <div class="club_poster border-color1">
@@ -50,9 +35,15 @@
               </a>
             </span>
             <span class="icon_wrap">
-              <a href="#">
-                <i class="fas fa-star"></i>
-              </a>
+                  <% if @note.f_users.include?(current_user) %>
+                    <%= link_to(
+                    '<i class="fas fa-star favorite2"></i>'.html_safe,
+                    favorite_article_path, method: :post) %>
+                  <% else %>
+                    <%= link_to(
+                    '<i class="far fa-star favorite1"></i>'.html_safe, 
+                    favorite_article_path, method: :post) %>
+                  <% end %>
             </span>
           </span>
         </h1>

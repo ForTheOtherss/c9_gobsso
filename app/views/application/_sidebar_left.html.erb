@@ -2,39 +2,34 @@
   <div class="favorite-main-text">
     <span class="favorite-main">즐겨찾기</span>
   </div>
-  <div class="favorite-content border-color2">
-    <img src="/assets/1.jpg" alt="a" class="favorite-img s-horizon">
-    <div class="favorite-text">
-      <p>
-        컴퓨터/IT
-        <span class="color1 favorite-dday">D-1</span>
-      </p>
-      <h1>
-        멋쟁이 사자처럼
-        <i class="fas fa-star favorite-star"></i>
-      </h1>
-      <p class="black2">
-        <%= "멋쟁이 사자처럼은 비전공자도 코딩을 할 수 있는 동아리입니다."[0, 17] %> ...
-      </p>
+  <% @notes.each do |n| %>
+    <% if n.f_users.include?(current_user) %>
+    <div class="favorite-content border-color2">
+      <img src="/assets/1.jpg" alt="a" class="favorite-img s-horizon">
+      <div class="favorite-text">
+        <p>
+          <%= n.club.field %>
+          <span class="color1 favorite-dday">D-1</span>
+        </p>
+        <h1>
+          <%= n.club.title %>
+          <% link = '/club/' + n.id.to_s + '/favorites2' %>
+          <%= link_to(
+                    '<i class="fas fa-star favorite2 favorite-star"></i>'.html_safe,
+                    link, method: :post) %>
+        </h1>
+        <p class="black2">
+          <% if n.club.subtitle.length > 17 %>
+            <%= n.club.subtitle[0, 17] %> ...
+          <% else %> 
+            <%= n.club.subtitle %>
+          <% end %>
+        </p>
+      </div>
     </div>
-  </div>
-  
-  <div class="favorite-content border-color2">
-    <img src="/assets/1.jpg" alt="a" class="favorite-img s-horizon">
-    <div class="favorite-text">
-      <p>
-        컴퓨터/IT
-        <span class="color1 favorite-dday">D-1</span>
-      </p>
-      <h1>
-        멋쟁이 사자처럼
-        <i class="fas fa-star favorite-star"></i>
-      </h1>
-      <p class="black2">
-        <%= "멋쟁이 사자처럼은 비전공자도 코딩을 할 수 있는 동아리입니다."[0, 17] %> ...
-      </p>
-    </div>
-  </div>
+    <% end %>
+  <% end %>
+
 
 
   

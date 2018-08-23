@@ -108,3 +108,14 @@ $(function(){
     });
   });
 });
+
+
+// 즐겨찾기 추가, 삭제 알림창
+$(function(){
+  $('.favorite1').click(function(){
+    alert("즐겨찾기에 추가되었습니다.");
+  });
+  $('.favorite2').click(function(){
+    alert("즐겨찾기에서 삭제되었습니다.");
+  })
+});
