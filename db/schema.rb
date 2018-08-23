@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180820072614) do
+ActiveRecord::Schema.define(version: 20180822015725) do
 
   create_table "applies", force: :cascade do |t|
     t.string   "contact"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20180820072614) do
   create_table "clubs", force: :cascade do |t|
     t.text     "title"
     t.text     "subtitle"
-    t.integer  "field"
-    t.integer  "official"
+    t.string   "field"
+    t.string   "official"
     t.integer  "room"
     t.integer  "size"
     t.string   "always_apply"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(version: 20180820072614) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"
+    t.integer  "note_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
     t.integer  "note_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
          
   has_many :notes
   has_many :club
+  has_many :favorites
+  has_many :f_notes, through: :favorites, source: :note
 end

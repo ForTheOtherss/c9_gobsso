@@ -4,8 +4,8 @@ class CreateClubs < ActiveRecord::Migration
       t.text :title
       t.text :subtitle
       
-      t.integer :field
-      t.integer :official
+      t.string :field
+      t.string :official
       t.integer :room
       t.integer :size
       t.string :always_apply

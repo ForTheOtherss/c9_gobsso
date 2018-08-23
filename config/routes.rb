@@ -32,6 +32,11 @@ Rails.application.routes.draw do
   # Destroy
   delete '/club/:id' => 'notes#destroy' 
   
+  
+  #### Favorites
+  post '/club/:id/favorites' => 'favorites#favorite_toggle', as: 'favorite_article'
+  post '/club/:id/favorites2' => 'favorites#favorite_toggle2'
+  
   #### Apply
   # new, create
   get '/club/:id/apply/new' => 'applies#new_apply'
@@ -62,6 +67,8 @@ Rails.application.routes.draw do
   get '/mypage/info/change' => 'mypage#info3'
   get '/mypage/info/complete' => 'mypage#info4'
   get '/mypage/notes_list' => 'mypage#notes_list'
+
+
 
   
   ### 메인 페이지
