@@ -62,6 +62,7 @@ class NotesController < ApplicationController
         c.question8 = params[:input_question8]
         c.question9 = params[:input_question9]
         c.question10 = params[:input_question10]
+        c.image = params[:image]
         
         c.note = n
         c.save
