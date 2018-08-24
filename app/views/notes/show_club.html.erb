@@ -25,14 +25,10 @@
           </span>
           <span class="club_label_wrap1">
             <span class="icon_wrap">
-              <a href="#">
-                <i class="far fa-thumbs-up"></i> 11
-              </a>
+              <i class="far fa-thumbs-up"></i><%= link_to "좋아요 #{@note.get_upvotes.size}", like_club_path(@note), method: :put %>
             </span>
             <span class="icon_wrap">
-              <a href="#">
-                <i class="far fa-thumbs-down"></i> 2
-              </a>
+              <i class="far fa-thumbs-down"></i><%= link_to "싫어요 #{@note.get_downvotes.size}", dislike_club_path(@note), method: :put %>
             </span>
             <span class="icon_wrap">
                   <% if @note.f_users.include?(current_user) %>
