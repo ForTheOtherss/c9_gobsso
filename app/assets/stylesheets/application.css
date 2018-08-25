@@ -821,7 +821,6 @@ body, dd, input {
 .fa-star {
   color: #ffea05;
   margin-right: 3px;
-  margin-left: 20px;
   font-size: 17px;
 }
 
@@ -839,8 +838,10 @@ body, dd, input {
 
 .club_content_main span {
   color: black;
-  border: 1px solid black;
-  font-size: 13px;
+  /*border: 1px solid black;*/
+  font-size: 14px;
+  font-weight: 600;
+  padding-right: 7px;
 }
 
 .club_subtitle {
