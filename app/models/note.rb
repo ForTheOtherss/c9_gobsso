@@ -7,7 +7,11 @@ class Note < ActiveRecord::Base
     has_many :favorites
     has_many :f_users, through: :favorites, source: :user
     
+    
     has_many :impressions, :as=>:impressionable
+    
+    acts_as_votable
+    
     def impression_count
        impressions.size
     end
