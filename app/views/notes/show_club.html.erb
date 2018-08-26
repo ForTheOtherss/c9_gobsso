@@ -15,7 +15,9 @@
             <% end %>
           </span>
           <span class="club_dday_label bg-color2">
-            <% if (@note.club.recruit_end - Time.zone.now)/(60*60*24) < 0  %>
+            <% if @note.club.always_apply == 'on' %>
+              상시 모집
+            <% elsif (@note.club.recruit_end - Time.zone.now)/(60*60*24) < 0  %>
               마감
             <% elsif ((@note.club.recruit_end - Time.zone.now)/(60*60*24)).to_i == 0 %>
               D-day

@@ -33,7 +33,7 @@
             <% finished_notes = [] %>
             
             <% @notes.each do |t| %>
-              <% if (t.club.recruit_end - Time.zone.now)/(60*60*24) >= 0 %>
+              <% if (t.club.recruit_end - Time.zone.now)/(60*60*24) >= 0 || t.club.always_apply == 'on' %>
                 <% doing_notes.push(t) %>
               <% else %>
                 <% finished_notes.push(t) %>
@@ -45,6 +45,7 @@
               <% ordered_notes = doing_notes.concat(finished_notes) %>
             <% end %>
             <% ordered_notes.each do |n| %>  
+
               <% doing = (n.club.recruit_end - Time.zone.now)/(60*60*24) >= 0 %>
               <% finished = (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0 %>
               <% dday = ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i == 0 %>
@@ -52,7 +53,7 @@
               <% not_always = n.club.always_apply != 'on' %>
               <tbody>
                 <tr class="club-table-line">
-                  <% if finished %>
+                  <% if finished && not_always %>
                     <td class="bg-color2">
                   <% else %>
                     <td>

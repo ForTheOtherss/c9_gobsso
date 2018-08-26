@@ -2,14 +2,32 @@
   <div class="favorite-main-text">
     <span class="favorite-main">즐겨찾기</span>
   </div>
+
+  
+  
   <% @notes.each do |n| %>
+  
+    <% doing = (n.club.recruit_end - Time.zone.now)/(60*60*24) >= 0 %>
+    <% finished = (n.club.recruit_end - Time.zone.now)/(60*60*24) < 0 %>
+    <% dday = ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i == 0 %>
+    <% always = n.club.always_apply == 'on' %>
+    <% not_always = n.club.always_apply != 'on' %>
+    
     <% if n.f_users.include?(current_user) %>
     <div class="favorite-content border-color2">
       <img src="/assets/1.jpg" alt="a" class="favorite-img s-horizon">
       <div class="favorite-text">
         <p>
           <%= n.club.field %>
-          <span class="color1 favorite-dday">D-1</span>
+          <% if always %>
+            <span class="color1 favorite-dday">상시 모집</span>
+          <% elsif finished %>
+            <span class='club_dday_color1 favorite-dday'>마감</span>
+          <% elsif dday %>
+            <span class="club_dday_color2 favorite-dday">D-day</span>
+          <% else %>
+            <span class="color1 favorite-dday">D-<%= ((n.club.recruit_end - Time.zone.now)/(60*60*24)).to_i %></span>
+          <% end %>
         </p>
         <h1>
           <%= n.club.title %>
