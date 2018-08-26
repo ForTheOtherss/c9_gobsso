@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   has_many :club
   has_many :favorites
   has_many :f_notes, through: :favorites, source: :note
+  
+  acts_as_voter
 end

@@ -7,6 +7,12 @@ gem 'devise'
 gem 'kaminari'
 gem 'impressionist' #조회수
 
+gem 'fog', '~> 1.41.0'
+gem 'carrierwave' 
+gem 'mini_magick'
+gem 'acts_as_votable'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record

@@ -1,6 +1,6 @@
 <!-- 동아리 -->
   <div id=club-new-note class="club_new_wrap">
-    <form action='/club' method='post' name='aaa'> 
+    <%= form_tag '/club', method:'post', multipart: true do %> 
       <input name='authenticity_token' type='hidden' value=<%= form_authenticity_token %>></input>
       <input name='input_mainCategory' type='hidden' value='club'></input>
       
@@ -11,8 +11,9 @@
           <p class="club_new_notice">* 별표 표시는 필수 항목입니다.</p>
           <p class="club_new_subtitle">기본 정보*</p>
           <input class="input_ver1" size="38" name='club_title' type='text' placeholder='동아리 이름 *' required autocomplete="off"></input><br>
-          <!--<사진 첨부 기능><br>-->
-          <br>
+          
+          <사진 첨부 기능><br>
+          <input type="file" multipart=true name="image">
           <input class="input_ver1" size="89" name='club_subtitle' type='text' placeholder="동아리 한 줄 소개 *" required autocomplete="off"></input>
           
           <p class="club_new_subtitle">분야*</p>
@@ -109,5 +110,5 @@
         <input type='submit' value='확인' class="apply_submit apply_submit1 s-horizon"></input>
         <a href="/club" class="apply_submit apply_submit2 s-horizon">취소</a>
       </div>
-    </form>
+    <% end %>
   </div>

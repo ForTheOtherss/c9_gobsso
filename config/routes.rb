@@ -67,6 +67,15 @@ Rails.application.routes.draw do
   get '/mypage/info/change' => 'mypage#info3'
   get '/mypage/info/complete' => 'mypage#info4'
   get '/mypage/notes_list' => 'mypage#notes_list'
+  
+  
+  
+resources :club do
+  member do
+     put "like", to: "notes#upvote"
+     put "dislike", to: "notes#downvote"
+  end
+end
 
 
 
