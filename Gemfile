@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 
-gem 'rails_db'
-gem 'pry-rails'
 gem 'devise'
 gem 'kaminari'
 gem 'impressionist' #조회수
@@ -15,8 +13,7 @@ gem 'acts_as_votable'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -44,9 +41,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+group :development, :test do 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3' # sqlite3은 개발환경, 테스트 환경에 넣어놔야 한다. (이유는 설명 안 함)
+  gem 'pry-rails'
 end
 
 group :development do
@@ -55,5 +55,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'rails_db' # 사용자들이 rails_db를 통해 데이터베이스를 볼 수 있도록 만들면 안 된다. 
+  
 end
 
+group :production do
+  gem 'pg' # 이것도 작성해주어야 한다. 
+end

@@ -15,7 +15,9 @@
     
     <% if n.f_users.include?(current_user) %>
     <div class="favorite-content border-color2">
-      <img src="/assets/1.jpg" alt="a" class="favorite-img s-horizon">
+      <img src="<%= n.club.image %>" alt="a" class="favorite-img s-horizon">
+      
+      
       <div class="favorite-text">
         <p>
           <%= n.club.field %>
